@@ -47,7 +47,7 @@ export function NexorithLogo(props: ComponentProps<"svg">) {
         />
       </g>
       <defs>
-        <clipPath id="clip0_276_138">
+        <clipPath>
           <rect width="399.67" height="104.06" fill="white" />
         </clipPath>
       </defs>

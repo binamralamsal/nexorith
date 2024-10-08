@@ -1,3 +1,4 @@
+import { Asterisk } from "@/components/icons/asterisk";
 import { Button } from "@/components/ui/button";
 import Marquee from "@/components/ui/marquee";
 import { MoveRight } from "lucide-react";
@@ -19,11 +20,11 @@ export default function Home() {
       <section className="md:bg-hero bg-cover bg-no-repeat bg-center relative overflow-hidden">
         <div className="container grid md:grid-cols-2 py-16 md:py-20 lg:py-40">
           <div className="flex flex-col md:items-start gap-6">
-            <h2 className="font-bold text-4xl md:text-5xl lg:text-7xl">
+            <h2 className="font-bold text-4xl md:text-5xl lg:text-7xl tracking-tighter">
               we <span className="text-primary">Build</span> <br />
               your <span className="text-primary">Dream.</span>
             </h2>
-            <p className="max-w-[40ch] leading-soft">
+            <p className="max-w-[40ch] leading-relaxed">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been
             </p>
@@ -50,7 +51,7 @@ export default function Home() {
             {services.map((service) => (
               <li
                 key={service}
-                className="text-xl md:text-2xl lg:text-3xl text-primary/60 font-medium lg:font-semibold"
+                className="text-xl md:text-2xl lg:text-3xl text-primary/60 font-medium lg:font-semibold tracking-tighter"
               >
                 {service}
               </li>
@@ -59,9 +60,17 @@ export default function Home() {
         </Marquee>
       </section>
 
-      <section className="my-10 md:my-20 lg:my-30">
-        <div className="container grid md:grid-cols-2 items-center gap-4 md:gap-8 lg:gap-16">
-          <div>
+      <section className="py-10 md:py-20 lg:py-30 overflow-hidden">
+        <div className="container grid md:grid-cols-2 items-center gap-4 md:gap-8 lg:gap-16 relative">
+          <Asterisk className="absolute h-10 top-0 right-10" />
+          <div className="relative">
+            <Image
+              src="/spinning.png"
+              alt="Spinning Wheel"
+              height={300}
+              width={300}
+              className="absolute w-full -left-40 top-20 -z-10 animate-spin opacity-15 duration-6s not-sr-only"
+            />
             <Image
               src="/people-1.png"
               alt="People 1"
@@ -74,11 +83,18 @@ export default function Home() {
               alt="People 2"
               width={400}
               height={400}
-              className="w-[60%] relative -mb-10 ml-auto -top-10 shadow-sm opacity-40 border-8 border-white rounded-b-3xl"
+              className="w-[60%] relative -mb-10 ml-auto -top-10 shadow-sm border-8 border-white rounded-b-3xl"
             />
           </div>
-          <div className="flex flex-col gap-6 leading-soft">
-            <h2 className="font-semibold text-2xl md:text-3xl lg:text-4xl">
+          <div className="flex flex-col gap-6 leading-relaxed relative">
+            <Image
+              src="/spinning.png"
+              alt="Spinning Wheel"
+              height={300}
+              width={300}
+              className="absolute w-full -right-[15rem] -top-[15rem] -z-10 animate-spin opacity-5 duration-6s not-sr-only"
+            />
+            <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl text-primary tracking-tight">
               About Us
             </h2>
             <p>

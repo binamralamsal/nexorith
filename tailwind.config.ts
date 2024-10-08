@@ -10,6 +10,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animationDuration: {
+        "2s": "2s",
+        "3s": "3s",
+        "4s": "4s",
+        "5s": "5s",
+        "6s": "6s",
+      },
       container: {
         center: true,
         padding: "1rem",
