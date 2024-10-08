@@ -6,7 +6,7 @@ import { MobileNav } from "./mobile-nav";
 
 export function SiteHeader() {
   return (
-    <header className="flex justify-between items-center p-4 sticky top-0 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-[0_8px_30px_rgb(0,0,0,0.05)]">
+    <header className="flex justify-between items-center p-4 sticky top-0 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-[0_8px_30px_rgb(0,0,0,0.05)] z-50">
       <Link href="/">
         <NexorithLogo className="h-8" />
       </Link>
