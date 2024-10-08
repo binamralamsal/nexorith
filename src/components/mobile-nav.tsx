@@ -1,5 +1,10 @@
 "use client";
 
+import { Menu } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -8,14 +13,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-
-import { Menu } from "lucide-react";
 import { navLinks } from "@/config/site";
-import { NexorithLogo } from "./icons/logo";
-import Link from "next/link";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+
+import { NexorithLogo } from "./icons/logo";
 
 export function MobileNav() {
   const pathname = usePathname();
@@ -42,8 +43,8 @@ export function MobileNav() {
               <Link
                 href={navLink.href}
                 className={cn(
-                  "py-1 hover:text-primary transition-all ease-in-out text-sm block",
-                  pathname === navLink.href && "font-medium text-primary"
+                  "block py-1 text-sm transition-all ease-in-out hover:text-primary",
+                  pathname === navLink.href && "font-medium text-primary",
                 )}
                 onClick={() => setIsSheetOpened(false)}
               >

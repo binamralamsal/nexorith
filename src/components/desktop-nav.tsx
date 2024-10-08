@@ -1,10 +1,12 @@
 "use client";
 
-import { navLinks } from "@/config/site";
 import Link from "next/link";
-import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
+
+import { navLinks } from "@/config/site";
 import { cn } from "@/lib/utils";
+
+import { Button } from "./ui/button";
 
 export function DesktopNav() {
   const pathname = usePathname();
@@ -18,8 +20,8 @@ export function DesktopNav() {
               <Link
                 href={navLink.href}
                 className={cn(
-                  "p-4 hover:text-primary transition-all ease-in-out text-sm",
-                  pathname === navLink.href && "font-medium text-primary"
+                  "p-4 text-sm transition-all ease-in-out hover:text-primary",
+                  pathname === navLink.href && "font-medium text-primary",
                 )}
               >
                 {navLink.label}
