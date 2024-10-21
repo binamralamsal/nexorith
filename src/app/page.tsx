@@ -174,7 +174,7 @@ export default function Home() {
         </div>
       </section> */}
 
-      <section className="container grid py-16 md:py-20 lg:py-24 gap-4 md:grid-cols-[3fr,2fr] items-center">
+      <section className="container grid py-16 md:py-20 lg:py-24 gap-8 md:gap-20 lg:grid-cols-[3fr,2fr] items-center">
         <div className="space-y-6 lg:space-y-8">
           <Link
             className="inline-block group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
@@ -219,7 +219,7 @@ export default function Home() {
             </ul>
           </div>
         </div>
-        <div className="hidden md:block relative">
+        <div className="relative md:px-28 lg:px-0">
           <Image
             className="w-full"
             src="/hero.jpg"
@@ -227,8 +227,8 @@ export default function Home() {
             height={200}
             width={200}
           />
-          <HandWrittenLines className="absolute -top-8 -left-20 h-20" />
-          <div className="absolute space-y-2 -left-8 p-4 bottom-5 bg-secondary rounded-md shadow-sm">
+          <HandWrittenLines className="hidden absolute md:block h-20 md:left-8 md:-top-8 lg:-left-20" />
+          <div className="absolute space-y-2 left-5 md:left-14 lg:-left-8 p-4 bottom-5 bg-secondary rounded-md shadow-sm">
             <div className="flex items-center gap-2">
               <strong className="text-lg">5K+</strong>
               <AvatarCircles avatarUrls={avatarUrls} />
