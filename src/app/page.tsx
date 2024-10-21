@@ -243,7 +243,7 @@ export default function Home() {
               height={400}
               width={400}
             />
-            <BirdsDecoration className="h-24 absolute right-4 bottom-14 text-primary" />
+            <BirdsDecoration className="hidden xs:block bottom-32 md:bottom-2 lg:bottom-14 h-24 absolute right-4 text-primary" />
           </div>
           <div className="grid gap-4 md:gap-8">
             <div className="bg-secondary rounded-md p-4 grid place-items-center text-center gap-1">
