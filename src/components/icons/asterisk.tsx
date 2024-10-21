@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
 
-export function Asterisk(props: ComponentProps<"svg">) {
+export function AsteriskIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       viewBox="0 0 56 56"

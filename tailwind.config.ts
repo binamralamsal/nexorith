@@ -20,6 +20,9 @@ const config: Config = {
       container: {
         center: true,
         padding: "1rem",
+        screens: {
+          "2xl": "1300px",
+        },
       },
       backgroundImage: {
         hero: 'linear-gradient(to right, white 40%, rgba(255, 255, 255, 0) 80%), url("/hero.png")',

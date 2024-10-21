@@ -1,8 +1,11 @@
-// import Image from "next/image";
-// import Link from "next/link";
 import Image from "next/image";
 import Link from "next/link";
 
+import { GlobeIcon } from "@/components/icons/globe";
+import { HandWrittenLines } from "@/components/icons/handwritten-lines";
+import { PersonIcon } from "@/components/icons/person";
+import AnimatedShinyText from "@/components/ui/animated-shiny-text";
+import AvatarCircles from "@/components/ui/avatar-circles";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -12,17 +15,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-// import AnimatedShinyText from "@/components/ui/animated-shiny-text";
-// import BlurIn from "@/components/ui/blur-in";
-// import { FadeText } from "@/components/ui/fade-text";
-
-// import { ArrowRightIcon } from "lucide-react";
-
-// import { Asterisk } from "@/components/icons/asterisk";
-// import { Button } from "@/components/ui/button";
-// import Marquee from "@/components/ui/marquee";
-
-// import { MoveRight } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 
 // const services = [
 //   "Digital Marketing",
@@ -67,6 +60,14 @@ const courses = [
     image: "/hero.png",
     link: "/courses/css-mastery",
   },
+];
+
+const avatarUrls = [
+  "https://avatars.githubusercontent.com/u/61900781",
+  "https://avatars.githubusercontent.com/u/16860528",
+  "https://avatars.githubusercontent.com/u/20110627",
+  "https://avatars.githubusercontent.com/u/106103625",
+  "https://avatars.githubusercontent.com/u/59228569",
 ];
 
 export default function Home() {
@@ -173,8 +174,8 @@ export default function Home() {
         </div>
       </section> */}
 
-      {/* <section className="container grid py-16 gap-4 md:grid-cols-[60%,40%] md:py-20 lg:py-28">
-        <div className="space-y-4 lg:space-y-6">
+      <section className="container grid py-16 md:py-20 lg:py-24 gap-4 md:grid-cols-[3fr,2fr] items-center">
+        <div className="space-y-6 lg:space-y-8">
           <Link
             className="inline-block group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
             href="#"
@@ -184,47 +185,60 @@ export default function Home() {
               <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
             </AnimatedShinyText>
           </Link>
-          <h2 className="text-4xl md:max-w-[11ch] font-bold tracking-tighter md:text-5xl lg:text-7xl">
-            <FadeText
-              framerProps={{
-                show: { transition: { delay: 0, duration: 0.3 } },
-              }}
-            >
-              Creative
-            </FadeText>{" "}
-            <FadeText
-              framerProps={{
-                show: { transition: { delay: 0.2, duration: 0.3 } },
-              }}
-            >
-              Studio
-            </FadeText>
-            <FadeText
-              framerProps={{
-                show: { transition: { delay: 0.4, duration: 0.3 } },
-              }}
-            >
-              Focused on
-            </FadeText>
-            <FadeText
-              framerProps={{
-                show: { transition: { delay: 0.6, duration: 0.3 } },
-              }}
-            >
-              Web&nbsp;Design
-            </FadeText>
+          <h2 className="text-4xl md:max-w-[12ch] font-bold tracking-tighter md:text-5xl lg:text-7xl">
+            Creative Focused on Web&nbsp;Design
           </h2>
           <p className="leading-relaxed md:max-w-[50ch]">
-            <FadeText framerProps={{ show: { transition: { delay: 0.7 } } }}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been
-            </FadeText>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been
           </p>
-        </div>
-        <div>asdf</div>
-      </section> */}
 
-      <div className="container mx-auto px-4 py-8">
+          <div>
+            <ul className="grid md:grid-cols-2 gap-6">
+              <li className="flex gap-4">
+                <GlobeIcon
+                  className="w-12 h-12"
+                  style={{ color: "hsl(var(--primary))" }}
+                />
+                <div className="space-y-1">
+                  <strong>24/7 Support</strong>
+                  <p>We&apos;r always here to help</p>
+                </div>
+              </li>
+
+              <li className="flex gap-4">
+                <PersonIcon
+                  className="w-12 h-12"
+                  style={{ color: "hsl(var(--primary))" }}
+                />
+                <div className="space-y-1">
+                  <strong>Award Winning agency</strong>
+                  <p>You are in safe hand</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="hidden md:block relative">
+          <Image
+            className="w-full"
+            src="/hero.jpg"
+            alt="Hero Image"
+            height={200}
+            width={200}
+          />
+          <HandWrittenLines className="absolute -top-8 -left-20 h-20" />
+          <div className="absolute space-y-2 -left-8 p-4 bottom-5 bg-secondary rounded-md shadow-sm">
+            <div className="flex items-center gap-2">
+              <strong className="text-lg">5K+</strong>
+              <AvatarCircles avatarUrls={avatarUrls} />
+            </div>
+            <p>Total Visitors Per Month</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="container py-16 md:py-20 lg:py-24">
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Our Courses</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -241,7 +255,7 @@ export default function Home() {
                   alt={course.title}
                   width={300}
                   height={200}
-                  className="w-full h-48 object-cover rounded-t-lg"
+                  className="w-full h-48 rounded-t-lg"
                 />
               </CardHeader>
               <CardContent className="flex-grow p-6">
@@ -256,7 +270,7 @@ export default function Home() {
             </Card>
           ))}
         </div>
-      </div>
+      </section>
     </main>
   );
 }
