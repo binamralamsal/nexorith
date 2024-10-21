@@ -8,7 +8,7 @@ export function Asterisk(props: ComponentProps<"svg">) {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clip-path="url(#clip0_212_70)">
+      <g clipPath="url(#clip0_212_70)">
         <path
           d="M39.3243 53.6063L36.0222 54.8251L25.7633 27.032L29.0654 25.8131L39.3243 53.6063Z"
           fill="#405CA9"

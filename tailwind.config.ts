@@ -33,6 +33,14 @@ const config: Config = {
             transform: "scale(4)",
           },
         },
+        headerSticky: {
+          "0%": {
+            transform: "translateY(-100%)",
+          },
+          "100%": {
+            transform: "translateY(0)",
+          },
+        },
         marquee: {
           from: {
             transform: "translateX(0)",
@@ -49,6 +57,14 @@ const config: Config = {
             transform: "translateY(calc(-100% - var(--gap)))",
           },
         },
+        "shiny-text": {
+          "0%, 90%, 100%": {
+            "background-position": "calc(-100% - var(--shiny-width)) 0",
+          },
+          "30%, 60%": {
+            "background-position": "calc(100% + var(--shiny-width)) 0",
+          },
+        },
       },
       lineHeight: {
         soft: "1.8",
@@ -57,6 +73,8 @@ const config: Config = {
         "scale-up-down": "scale 5s ease-in-out infinite",
         marquee: "marquee var(--duration) infinite linear",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+        headerSticky: "headerSticky var(--duration, .5s) ease-in-out",
+        "shiny-text": "shiny-text 8s infinite",
       },
       colors: {
         background: "hsl(var(--background))",

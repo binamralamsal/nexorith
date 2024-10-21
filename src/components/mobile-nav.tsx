@@ -1,9 +1,9 @@
 "use client";
 
-import { Menu } from "lucide-react";
+import { useState } from "react";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -13,6 +13,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+
+import { Menu } from "lucide-react";
+
 import { navLinks } from "@/config/site";
 import { cn } from "@/lib/utils";
 

@@ -1,24 +1,78 @@
-import { MoveRight } from "lucide-react";
+// import Image from "next/image";
+// import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
-import { Asterisk } from "@/components/icons/asterisk";
 import { Button } from "@/components/ui/button";
-import Marquee from "@/components/ui/marquee";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
-const services = [
-  "Digital Marketing",
-  "Graphics Design",
-  "UI/UX",
-  "ERP Development",
-  "MVP Development",
-  "App Development",
-  "Web Development",
+// import AnimatedShinyText from "@/components/ui/animated-shiny-text";
+// import BlurIn from "@/components/ui/blur-in";
+// import { FadeText } from "@/components/ui/fade-text";
+
+// import { ArrowRightIcon } from "lucide-react";
+
+// import { Asterisk } from "@/components/icons/asterisk";
+// import { Button } from "@/components/ui/button";
+// import Marquee from "@/components/ui/marquee";
+
+// import { MoveRight } from "lucide-react";
+
+// const services = [
+//   "Digital Marketing",
+//   "Graphics Design",
+//   "UI/UX",
+//   "ERP Development",
+//   "MVP Development",
+//   "App Development",
+//   "Web Development",
+// ];
+
+const courses = [
+  {
+    id: 1,
+    title: "Frontend Workshop",
+    description:
+      "Learn the fundamentals of front-end development with HTML, CSS, and JavaScript.",
+    image: "/hero.png",
+    link: "/courses/intro-to-react",
+  },
+  {
+    id: 2,
+    title: "Python Workshop",
+    description:
+      "Learn the fundamentals of Python programming with variables, data types, and control structures.",
+    image: "/hero.png",
+    link: "/courses/advanced-javascript",
+  },
+  {
+    id: 3,
+    title: "Graphic Design Workshop",
+    description:
+      "Master CSS layouts, animations, and responsive design techniques.",
+    image: "/hero.png",
+    link: "/courses/css-mastery",
+  },
+  {
+    id: 4,
+    title: "UI/UX with Nexorith",
+    description:
+      "Master CSS layouts, animations, and responsive design techniques.",
+    image: "/hero.png",
+    link: "/courses/css-mastery",
+  },
 ];
 
 export default function Home() {
   return (
     <main>
-      <section className="relative overflow-hidden bg-cover bg-center bg-no-repeat md:bg-hero">
+      {/* <section className="relative overflow-hidden bg-cover bg-center bg-no-repeat md:bg-hero">
         <div className="container grid py-16 md:grid-cols-2 md:py-20 lg:py-40">
           <div className="flex flex-col gap-6 md:items-start">
             <h2 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">
@@ -117,7 +171,92 @@ export default function Home() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      {/* <section className="container grid py-16 gap-4 md:grid-cols-[60%,40%] md:py-20 lg:py-28">
+        <div className="space-y-4 lg:space-y-6">
+          <Link
+            className="inline-block group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            href="#"
+          >
+            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+              <span>🤩 Award-winning digital services</span>
+              <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+            </AnimatedShinyText>
+          </Link>
+          <h2 className="text-4xl md:max-w-[11ch] font-bold tracking-tighter md:text-5xl lg:text-7xl">
+            <FadeText
+              framerProps={{
+                show: { transition: { delay: 0, duration: 0.3 } },
+              }}
+            >
+              Creative
+            </FadeText>{" "}
+            <FadeText
+              framerProps={{
+                show: { transition: { delay: 0.2, duration: 0.3 } },
+              }}
+            >
+              Studio
+            </FadeText>
+            <FadeText
+              framerProps={{
+                show: { transition: { delay: 0.4, duration: 0.3 } },
+              }}
+            >
+              Focused on
+            </FadeText>
+            <FadeText
+              framerProps={{
+                show: { transition: { delay: 0.6, duration: 0.3 } },
+              }}
+            >
+              Web&nbsp;Design
+            </FadeText>
+          </h2>
+          <p className="leading-relaxed md:max-w-[50ch]">
+            <FadeText framerProps={{ show: { transition: { delay: 0.7 } } }}>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been
+            </FadeText>
+          </p>
+        </div>
+        <div>asdf</div>
+      </section> */}
+
+      <div className="container mx-auto px-4 py-8">
+        <header className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">Our Courses</h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Expand your skills with our comprehensive selection of courses. From
+            beginner to advanced, we have something for everyone.
+          </p>
+        </header>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {courses.map((course) => (
+            <Card key={course.id} className="flex flex-col">
+              <CardHeader className="p-0">
+                <Image
+                  src={course.image}
+                  alt={course.title}
+                  width={300}
+                  height={200}
+                  className="w-full h-48 object-cover rounded-t-lg"
+                />
+              </CardHeader>
+              <CardContent className="flex-grow p-6">
+                <CardTitle className="text-xl mb-2">{course.title}</CardTitle>
+                <p className="text-muted-foreground">{course.description}</p>
+              </CardContent>
+              <CardFooter className="p-6 pt-0">
+                <Button asChild className="w-full">
+                  <Link href={course.link}>Learn More</Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+      </div>
     </main>
   );
 }

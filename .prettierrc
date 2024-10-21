@@ -1,5 +1,22 @@
 {
-  "plugins": ["prettier-plugin-tailwindcss"],
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "@trivago/prettier-plugin-sort-imports"
+  ],
   "tailwindFunctions": ["cn", "cva"],
-  "tailwindAttributes": ["classNames", "toastOptions"]
+  "tailwindAttributes": ["classNames", "toastOptions"],
+
+  "importOrder": [
+    "server-only",
+    "use client",
+    "^react",
+    "^next",
+    "^@/components",
+    "^@?\\w",
+    "^@/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderSortByLength": true
 }
