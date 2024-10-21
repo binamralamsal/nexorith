@@ -6,6 +6,7 @@ import { GlobeIcon } from "@/components/icons/globe";
 import { HandWrittenLines } from "@/components/icons/handwritten-lines";
 import { PersonIcon } from "@/components/icons/person";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import AvatarCircles from "@/components/ui/avatar-circles";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,6 +16,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselDots,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 import { ArrowRightIcon, BadgeCheckIcon } from "lucide-react";
 
@@ -69,6 +76,45 @@ const avatarUrls = [
   "https://avatars.githubusercontent.com/u/20110627",
   "https://avatars.githubusercontent.com/u/106103625",
   "https://avatars.githubusercontent.com/u/59228569",
+];
+
+const reviews = [
+  {
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate sapiente porro nesciunt, ullam nemo earum culpa cumque eligendi quia ex.",
+    avatar: "https://avatars.githubusercontent.com/u/61900781",
+    name: "Binamra Lamsal",
+  },
+  {
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate sapiente porro nesciunt, ullam nemo earum culpa cumque eligendi quia ex.",
+    avatar: "https://avatars.githubusercontent.com/u/61900781",
+    name: "Binamra Lamsal",
+  },
+  {
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate sapiente porro nesciunt, ullam nemo earum culpa cumque eligendi quia ex.",
+    avatar: "https://avatars.githubusercontent.com/u/61900781",
+    name: "Binamra Lamsal",
+  },
+  {
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate sapiente porro nesciunt, ullam nemo earum culpa cumque eligendi quia ex.",
+    avatar: "https://avatars.githubusercontent.com/u/61900781",
+    name: "Binamra Lamsal",
+  },
+  {
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate sapiente porro nesciunt, ullam nemo earum culpa cumque eligendi quia ex.",
+    avatar: "https://avatars.githubusercontent.com/u/61900781",
+    name: "Binamra Lamsal",
+  },
+  {
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate sapiente porro nesciunt, ullam nemo earum culpa cumque eligendi quia ex.",
+    avatar: "https://avatars.githubusercontent.com/u/61900781",
+    name: "Binamra Lamsal",
+  },
 ];
 
 export default function Home() {
@@ -186,7 +232,7 @@ export default function Home() {
               <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
             </AnimatedShinyText>
           </Link>
-          <h2 className="text-4xl md:max-w-[12ch] font-bold tracking-tighter md:text-5xl lg:text-7xl">
+          <h2 className="text-4xl md:max-w-[12ch] font-bold tracking-tighter md:text-5xl lg:text-7xl text-balance">
             Creative Focused on Web&nbsp;Design
           </h2>
           <p className="leading-relaxed md:max-w-[50ch]">
@@ -279,8 +325,8 @@ export default function Home() {
             </AnimatedShinyText>
           </Link>
 
-          <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tighter">
-            Defining the future of online&nbsp;experiences!
+          <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tighter text-balance">
+            Defining the future&nbsp;of online&nbsp;experiences!
           </h2>
 
           <p className="leading-relaxed md:max-w-[50ch]">
@@ -343,6 +389,52 @@ export default function Home() {
             </Card>
           ))}
         </div>
+      </section>
+
+      <section className="container grid py-16 md:py-20 lg:py-24 gap-8 md:gap-20 lg:grid-cols-[3fr,2fr] items-center">
+        <div className="space-y-6 lg:space-y-8">
+          {/* TODO: Fix duplicate */}
+          <Link
+            className="inline-block group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            href="#"
+          >
+            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+              <span>💖 Real results from real clients</span>
+              <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+            </AnimatedShinyText>
+          </Link>
+
+          <h2 className="text-2xl max-w-[20ch] md:text-3xl lg:text-5xl font-bold tracking-tighter text-balance">
+            See how we&apos;ve helped our clients succeed
+          </h2>
+
+          <strong className="block text-lg">
+            More than 1500+ agencies using Mizzle
+          </strong>
+
+          <Carousel
+            opts={{ align: "start", loop: true, slidesToScroll: 1 }}
+            className="max-w-[90vw] lg:max-w-max"
+          >
+            <CarouselContent>
+              {reviews.map((review, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 space-y-4">
+                  <div className="leading-relaxed font-medium">
+                    {review.description}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Avatar>
+                      <AvatarImage src={review.avatar} alt={review.name} />
+                    </Avatar>
+                    <span>By {review.name}</span>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselDots className="mt-6 lg:mt-8" />
+          </Carousel>
+        </div>
+        <div></div>
       </section>
     </main>
   );
