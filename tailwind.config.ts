@@ -10,6 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "480px",
+      },
       animationDuration: {
         "2s": "2s",
         "3s": "3s",

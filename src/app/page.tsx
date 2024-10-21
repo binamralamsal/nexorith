@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { BirdsDecoration } from "@/components/icons/birds";
 import { GlobeIcon } from "@/components/icons/globe";
 import { HandWrittenLines } from "@/components/icons/handwritten-lines";
 import { PersonIcon } from "@/components/icons/person";
@@ -15,7 +16,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowRightIcon, BadgeCheckIcon } from "lucide-react";
 
 // const services = [
 //   "Digital Marketing",
@@ -196,10 +197,7 @@ export default function Home() {
           <div>
             <ul className="grid md:grid-cols-2 gap-6">
               <li className="flex gap-4">
-                <GlobeIcon
-                  className="w-12 h-12"
-                  style={{ color: "hsl(var(--primary))" }}
-                />
+                <GlobeIcon className="w-12 h-12 text-primary" />
                 <div className="space-y-1">
                   <strong>24/7 Support</strong>
                   <p>We&apos;r always here to help</p>
@@ -207,10 +205,7 @@ export default function Home() {
               </li>
 
               <li className="flex gap-4">
-                <PersonIcon
-                  className="w-12 h-12"
-                  style={{ color: "hsl(var(--primary))" }}
-                />
+                <PersonIcon className="w-12 h-12 text-primary" />
                 <div className="space-y-1">
                   <strong>Award Winning agency</strong>
                   <p>You are in safe hand</p>
@@ -235,6 +230,84 @@ export default function Home() {
             </div>
             <p>Total Visitors Per Month</p>
           </div>
+        </div>
+      </section>
+
+      <section className="container grid py-16 md:py-20 lg:py-24 gap-8 md:gap-20 lg:grid-cols-[3fr,2fr] items-center">
+        <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 md:gap-8">
+          <div className="relative">
+            <Image
+              src="/about-1.jpg"
+              className="w-full rounded-md"
+              alt="About 1"
+              height={400}
+              width={400}
+            />
+            <BirdsDecoration className="h-24 absolute right-4 bottom-14 text-primary" />
+          </div>
+          <div className="grid gap-4 md:gap-8">
+            <div className="bg-secondary rounded-md p-4 grid place-items-center text-center gap-1">
+              <strong className="text-secondary-foreground text-4xl">
+                10+
+              </strong>
+              <span className="text-secondary-foreground">
+                Years of Experience
+              </span>
+            </div>
+            <div className="bg-primary rounded-md p-4 grid place-items-center text-center gap-1">
+              <strong className="text-primary-foreground text-4xl">1.2K</strong>
+              <span className="text-primary-foreground">Happy Customers</span>
+            </div>
+            <Image
+              src="/about-2.jpg"
+              className="w-full rounded-md md:col-span-2"
+              alt="About 1"
+              height={400}
+              width={400}
+            />
+          </div>
+        </div>
+        <div className="space-y-6 lg:space-y-8">
+          {/* TODO: Fix duplicate */}
+          <Link
+            className="inline-block group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            href="#"
+          >
+            <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+              <span>🤝 Your gateway to digital success</span>
+              <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+            </AnimatedShinyText>
+          </Link>
+
+          <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tighter">
+            Defining the future of online&nbsp;experiences!
+          </h2>
+
+          <p className="leading-relaxed md:max-w-[50ch]">
+            Embrace a new era of digital success with Mizzle. Our team combines
+            cutting-edge design with robust development to deliver websites that
+            captivate and convert.
+          </p>
+
+          <ul className="space-y-3">
+            <li className="flex gap-1 items-center">
+              <BadgeCheckIcon className="not-sr-only text-primary-foreground fill-primary" />
+              <span>Emphasis on ROI-driven solutions</span>
+            </li>
+            <li className="flex gap-1 items-center">
+              <BadgeCheckIcon className="not-sr-only text-primary-foreground fill-primary" />
+              <span>Expert team with diverse skill</span>
+            </li>
+            <li className="flex gap-1 items-center">
+              <BadgeCheckIcon className="not-sr-only text-primary-foreground fill-primary" />
+              <span>Proven track record of delivering results</span>
+            </li>
+          </ul>
+
+          <Button variant="secondary" size="lg" className="group">
+            <span>Learn More</span>
+            <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+          </Button>
         </div>
       </section>
 
