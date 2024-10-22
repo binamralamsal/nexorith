@@ -32,7 +32,6 @@ import {
   InstagramIcon,
   LinkedinIcon,
   TwitterIcon,
-  YoutubeIcon,
 } from "lucide-react";
 
 // const services = [
