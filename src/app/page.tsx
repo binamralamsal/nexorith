@@ -12,13 +12,6 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import AvatarCircles from "@/components/ui/avatar-circles";
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
   Carousel,
   CarouselContent,
   CarouselDots,
@@ -34,6 +27,8 @@ import {
   TwitterIcon,
 } from "lucide-react";
 
+import { CourseCatalog } from "./course-catalog";
+
 // const services = [
 //   "Digital Marketing",
 //   "Graphics Design",
@@ -43,41 +38,6 @@ import {
 //   "App Development",
 //   "Web Development",
 // ];
-
-const courses = [
-  {
-    id: 1,
-    title: "Frontend Workshop",
-    description:
-      "Learn the fundamentals of front-end development with HTML, CSS, and JavaScript.",
-    image: "/hero.png",
-    link: "/courses/intro-to-react",
-  },
-  {
-    id: 2,
-    title: "Python Workshop",
-    description:
-      "Learn the fundamentals of Python programming with variables, data types, and control structures.",
-    image: "/hero.png",
-    link: "/courses/advanced-javascript",
-  },
-  {
-    id: 3,
-    title: "Graphic Design Workshop",
-    description:
-      "Master CSS layouts, animations, and responsive design techniques.",
-    image: "/hero.png",
-    link: "/courses/css-mastery",
-  },
-  {
-    id: 4,
-    title: "UI/UX with Nexorith",
-    description:
-      "Master CSS layouts, animations, and responsive design techniques.",
-    image: "/hero.png",
-    link: "/courses/css-mastery",
-  },
-];
 
 const avatarUrls = [
   "https://avatars.githubusercontent.com/u/61900781",
@@ -90,39 +50,39 @@ const avatarUrls = [
 const reviews = [
   {
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate sapiente porro nesciunt, ullam nemo earum culpa cumque eligendi quia ex.",
-    avatar: "https://avatars.githubusercontent.com/u/61900781",
-    name: "Binamra Lamsal",
+      "Nexorith has transformed my understanding of web development! The courses are incredibly well-structured and informative.",
+    avatar: "https://avatars.githubusercontent.com/u/12345678",
+    name: "Aarav Shrestha",
   },
   {
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate sapiente porro nesciunt, ullam nemo earum culpa cumque eligendi quia ex.",
-    avatar: "https://avatars.githubusercontent.com/u/61900781",
-    name: "Binamra Lamsal",
+      "I loved the hands-on approach of the Graphic Design Workshop. The instructors are knowledgeable and supportive.",
+    avatar: "https://avatars.githubusercontent.com/u/23456789",
+    name: "Sita Gurung",
   },
   {
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate sapiente porro nesciunt, ullam nemo earum culpa cumque eligendi quia ex.",
-    avatar: "https://avatars.githubusercontent.com/u/61900781",
-    name: "Binamra Lamsal",
+      "The digital marketing strategies I learned from Nexorith helped boost my business's online presence significantly!",
+    avatar: "https://avatars.githubusercontent.com/u/34567890",
+    name: "Samir Thapa",
   },
   {
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate sapiente porro nesciunt, ullam nemo earum culpa cumque eligendi quia ex.",
-    avatar: "https://avatars.githubusercontent.com/u/61900781",
-    name: "Binamra Lamsal",
+      "As a beginner, I found the Frontend Workshop to be very approachable and engaging. Highly recommended!",
+    avatar: "https://avatars.githubusercontent.com/u/45678901",
+    name: "Pooja Singh",
   },
   {
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate sapiente porro nesciunt, ullam nemo earum culpa cumque eligendi quia ex.",
-    avatar: "https://avatars.githubusercontent.com/u/61900781",
-    name: "Binamra Lamsal",
+      "The courses at Nexorith provide a solid foundation in various technologies. I can't wait to apply what I've learned!",
+    avatar: "https://avatars.githubusercontent.com/u/56789012",
+    name: "Rajesh Karki",
   },
   {
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate sapiente porro nesciunt, ullam nemo earum culpa cumque eligendi quia ex.",
-    avatar: "https://avatars.githubusercontent.com/u/61900781",
-    name: "Binamra Lamsal",
+      "Nexorith offers exceptional support throughout the learning process. I appreciate their commitment to student success.",
+    avatar: "https://avatars.githubusercontent.com/u/67890123",
+    name: "Anjali Rathi",
   },
 ];
 
@@ -369,35 +329,12 @@ export default function Home() {
       <section className="container py-16 md:py-20 lg:py-24">
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Our Courses</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-md md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Expand your skills with our comprehensive selection of courses. From
             beginner to advanced, we have something for everyone.
           </p>
         </header>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course) => (
-            <Card key={course.id} className="flex flex-col">
-              <CardHeader className="p-0">
-                <Image
-                  src={course.image}
-                  alt={course.title}
-                  width={300}
-                  height={200}
-                  className="w-full h-48 rounded-t-lg"
-                />
-              </CardHeader>
-              <CardContent className="flex-grow p-6">
-                <CardTitle className="text-xl mb-2">{course.title}</CardTitle>
-                <p className="text-muted-foreground">{course.description}</p>
-              </CardContent>
-              <CardFooter className="p-6 pt-0">
-                <Button asChild className="w-full">
-                  <Link href={course.link}>Learn More</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+        <CourseCatalog />
       </section>
 
       <section className="container grid py-16 md:py-20 lg:py-24 gap-8 md:gap-10 lg:grid-cols-[1fr,3fr] items-center">
