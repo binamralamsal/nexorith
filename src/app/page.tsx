@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { ArrowDecoration } from "@/components/icons/arrow";
 import { BirdsDecoration } from "@/components/icons/birds";
 import { GlobeIcon } from "@/components/icons/globe";
 import { HandWrittenLines } from "@/components/icons/handwritten-lines";
@@ -265,8 +266,8 @@ export default function Home() {
             className="w-full"
             src="/hero.jpg"
             alt="Hero Image"
-            height={200}
-            width={200}
+            height={400}
+            width={400}
           />
           <HandWrittenLines className="hidden absolute md:block h-20 md:left-8 md:-top-8 lg:-left-20" />
           <div className="absolute space-y-2 left-5 md:left-14 lg:-left-8 p-4 bottom-5 bg-secondary rounded-md shadow-sm">
@@ -391,7 +392,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container grid py-16 md:py-20 lg:py-24 gap-8 md:gap-20 lg:grid-cols-[3fr,2fr] items-center">
+      <section className="container grid py-16 md:py-20 lg:py-24 gap-8 md:gap-10 lg:grid-cols-[1fr,3fr] items-center">
         <div className="space-y-6 lg:space-y-8">
           {/* TODO: Fix duplicate */}
           <Link
@@ -413,12 +414,15 @@ export default function Home() {
           </strong>
 
           <Carousel
-            opts={{ align: "start", loop: true, slidesToScroll: 1 }}
-            className="max-w-[90vw] lg:max-w-max"
+            opts={{ align: "start", slidesToScroll: 1 }}
+            className="max-w-[90vw]"
           >
             <CarouselContent>
               {reviews.map((review, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 space-y-4">
+                <CarouselItem
+                  key={index}
+                  className="md:basis-1/2 space-y-4 select-none"
+                >
                   <div className="leading-relaxed font-medium">
                     {review.description}
                   </div>
@@ -434,7 +438,35 @@ export default function Home() {
             <CarouselDots className="mt-6 lg:mt-8" />
           </Carousel>
         </div>
-        <div></div>
+        <div className="relative">
+          <ArrowDecoration className="h-40 absolute hidden lg:block -left-28 top-1/4" />
+          <Image
+            className="w-full"
+            src="/testimonials.jpg"
+            alt="Testimonials"
+            height={400}
+            width={400}
+          />
+          <div className="flex items-center gap-2 p-2 max-w-[35ch] rounded-md bg-secondary text-secondary-foreground shadow-md absolute top-5 left-5 lg:top-16 lg:-left-20">
+            <Avatar>
+              <AvatarImage
+                src="https://avatars.githubusercontent.com/u/59228569"
+                alt="Person"
+              />
+            </Avatar>
+            <p>The best Bootstrap theme we&apos;ve ever used 🔥</p>
+          </div>
+
+          <div className="flex items-center gap-2 p-2 max-w-[35ch] rounded-md bg-white shadow-md absolute bottom-5 right-5 lg:bottom-16 lg:-left-20">
+            <Avatar>
+              <AvatarImage
+                src="https://avatars.githubusercontent.com/u/20110627"
+                alt="Person"
+              />
+            </Avatar>
+            <p>Excellent Theme 💖</p>
+          </div>
+        </div>
       </section>
     </main>
   );
