@@ -82,7 +82,7 @@ export function CourseCatalog() {
       : courses.filter((course) => course.category === filter);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <>
       <div className="mb-6">
         <div className="flex flex-wrap gap-2 justify-center">
           {categories.map((category) => (
@@ -133,6 +133,6 @@ export function CourseCatalog() {
           </Card>
         ))}
       </div>
-    </div>
+    </>
   );
 }

@@ -327,7 +327,7 @@ export default function Home() {
       </section>
 
       <section className="container py-16 md:py-20 lg:py-24">
-        <header className="text-center mb-12">
+        <header className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-4">Our Courses</h1>
           <p className="text-md md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Expand your skills with our comprehensive selection of courses. From
