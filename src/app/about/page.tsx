@@ -101,11 +101,11 @@ export default function AboutPage() {
           opts={{ align: "start", slidesToScroll: 1, loop: true }}
           className="max-w-[90vw] md:max-w-[70w] lg:max-w-[75vw]"
         >
-          <CarouselContent className="space-x-4">
+          <CarouselContent className="-ml-4">
             {companies.map((Company, index) => (
               <CarouselItem
                 key={index}
-                className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/6"
+                className="basis-1/2 pl-4 sm:basis-1/3 md:basis-1/4 lg:basis-1/6"
               >
                 <Company className="h-[10vw] sm:h-12 md:h-10 lg:h-8" />
               </CarouselItem>
