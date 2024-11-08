@@ -1,10 +1,7 @@
 "use client";
-
 import { useState } from "react";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -16,8 +13,8 @@ import {
 
 import { Menu } from "lucide-react";
 
-import { navLinks } from "@/config/site";
-import { cn } from "@/lib/utils";
+import { navLinks } from "@/configs/site";
+import { cn } from "@/utils/cn";
 
 import { NexorithLogo } from "./icons/logo";
 

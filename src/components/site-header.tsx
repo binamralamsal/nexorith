@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import Link from "next/link";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 import { DesktopNav } from "./desktop-nav";
 import { NexorithLogo } from "./icons/logo";

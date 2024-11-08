@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { navLinks } from "@/config/site";
-import { cn } from "@/lib/utils";
+import { navLinks } from "@/configs/site";
+import { cn } from "@/utils/cn";
 
 import { Button } from "./ui/button";
 

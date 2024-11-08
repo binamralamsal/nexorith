@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import NextTopLoader from "nextjs-toploader";
 
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
-import { inter } from "@/lib/fonts";
+import { inter } from "@/libs/fonts";
 
 import "./globals.css";
 
@@ -21,6 +23,8 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <SiteHeader />
         {children}
+        <SiteFooter />
+        <NextTopLoader />
       </body>
     </html>
   );

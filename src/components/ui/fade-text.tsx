@@ -4,7 +4,7 @@ import { ElementType, ReactNode, useMemo } from "react";
 
 import { Variants, motion } from "framer-motion";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 type FadeTextProps<T extends ElementType> = {
   as?: T; // Accept any element type, defaulting to 'span'

@@ -5,7 +5,6 @@ import { ArrowDecoration } from "@/components/icons/arrow";
 import { BirdsDecoration } from "@/components/icons/birds";
 import { GlobeIcon } from "@/components/icons/globe";
 import { HandWrittenLines } from "@/components/icons/handwritten-lines";
-import { NexorithLogo } from "@/components/icons/logo";
 import { PersonIcon } from "@/components/icons/person";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
@@ -18,14 +17,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-import {
-  ArrowRightIcon,
-  BadgeCheckIcon,
-  FacebookIcon,
-  InstagramIcon,
-  LinkedinIcon,
-  TwitterIcon,
-} from "lucide-react";
+import { ArrowRightIcon, BadgeCheckIcon } from "lucide-react";
 
 import { CourseCatalog } from "./course-catalog";
 
@@ -190,10 +182,10 @@ export default function Home() {
         </div>
       </section> */}
 
-      <section className="container grid py-16 md:py-20 lg:py-24 gap-8 md:gap-20 lg:grid-cols-[3fr,2fr] items-center">
+      <section className="container grid items-center gap-8 py-16 md:gap-20 md:py-20 lg:grid-cols-[3fr,2fr] lg:py-24">
         <div className="space-y-6 lg:space-y-8">
           <Link
-            className="inline-block group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            className="group inline-block rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
             href="#"
           >
             <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
@@ -201,7 +193,7 @@ export default function Home() {
               <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
             </AnimatedShinyText>
           </Link>
-          <h2 className="text-4xl md:max-w-[12ch] font-bold tracking-tighter md:text-5xl lg:text-7xl text-balance">
+          <h2 className="text-balance text-4xl font-bold tracking-tighter md:max-w-[12ch] md:text-5xl lg:text-7xl">
             Creative Focused on Web&nbsp;Design
           </h2>
           <p className="leading-relaxed md:max-w-[50ch]">
@@ -210,9 +202,9 @@ export default function Home() {
           </p>
 
           <div>
-            <ul className="grid md:grid-cols-2 gap-6">
+            <ul className="grid gap-6 md:grid-cols-2">
               <li className="flex gap-4">
-                <GlobeIcon className="w-12 h-12 text-primary" />
+                <GlobeIcon className="h-12 w-12 text-primary" />
                 <div className="space-y-1">
                   <strong>24/7 Support</strong>
                   <p>We&apos;r always here to help</p>
@@ -220,7 +212,7 @@ export default function Home() {
               </li>
 
               <li className="flex gap-4">
-                <PersonIcon className="w-12 h-12 text-primary" />
+                <PersonIcon className="h-12 w-12 text-primary" />
                 <div className="space-y-1">
                   <strong>Award Winning agency</strong>
                   <p>You are in safe hand</p>
@@ -237,8 +229,8 @@ export default function Home() {
             height={400}
             width={400}
           />
-          <HandWrittenLines className="hidden absolute md:block h-20 md:left-8 md:-top-8 lg:-left-20" />
-          <div className="absolute space-y-2 left-5 md:left-14 lg:-left-8 p-4 bottom-5 bg-secondary rounded-md shadow-sm">
+          <HandWrittenLines className="absolute hidden h-20 md:-top-8 md:left-8 md:block lg:-left-20" />
+          <div className="absolute bottom-5 left-5 space-y-2 rounded-md bg-secondary p-4 shadow-sm md:left-14 lg:-left-8">
             <div className="flex items-center gap-2">
               <strong className="text-lg">5K+</strong>
               <AvatarCircles avatarUrls={avatarUrls} />
@@ -248,8 +240,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container grid py-16 md:py-20 lg:py-24 gap-8 md:gap-20 lg:grid-cols-[3fr,2fr] items-center">
-        <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 md:gap-8">
+      <section className="container grid items-center gap-8 py-16 md:gap-20 md:py-20 lg:grid-cols-[3fr,2fr] lg:py-24">
+        <div className="grid grid-cols-1 gap-4 xs:grid-cols-2 md:gap-8">
           <div className="relative">
             <Image
               src="/about-1.jpg"
@@ -258,19 +250,19 @@ export default function Home() {
               height={400}
               width={400}
             />
-            <BirdsDecoration className="hidden xs:block bottom-32 md:bottom-2 lg:bottom-14 h-24 absolute right-4 text-primary" />
+            <BirdsDecoration className="absolute bottom-32 right-4 hidden h-24 text-primary xs:block md:bottom-2 lg:bottom-14" />
           </div>
           <div className="grid gap-4 md:gap-8">
-            <div className="bg-secondary rounded-md p-4 grid place-items-center text-center gap-1">
-              <strong className="text-secondary-foreground text-4xl">
+            <div className="grid place-items-center gap-1 rounded-md bg-secondary p-4 text-center">
+              <strong className="text-4xl text-secondary-foreground">
                 10+
               </strong>
               <span className="text-secondary-foreground">
                 Years of Experience
               </span>
             </div>
-            <div className="bg-primary rounded-md p-4 grid place-items-center text-center gap-1">
-              <strong className="text-primary-foreground text-4xl">1.2K</strong>
+            <div className="grid place-items-center gap-1 rounded-md bg-primary p-4 text-center">
+              <strong className="text-4xl text-primary-foreground">1.2K</strong>
               <span className="text-primary-foreground">Happy Customers</span>
             </div>
             <Image
@@ -285,7 +277,7 @@ export default function Home() {
         <div className="space-y-6 lg:space-y-8">
           {/* TODO: Fix duplicate */}
           <Link
-            className="inline-block group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            className="group inline-block rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
             href="#"
           >
             <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
@@ -294,7 +286,7 @@ export default function Home() {
             </AnimatedShinyText>
           </Link>
 
-          <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold tracking-tighter text-balance">
+          <h2 className="text-balance text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
             Defining the future&nbsp;of online&nbsp;experiences!
           </h2>
 
@@ -305,16 +297,16 @@ export default function Home() {
           </p>
 
           <ul className="space-y-3">
-            <li className="flex gap-1 items-center">
-              <BadgeCheckIcon className="not-sr-only text-primary-foreground fill-primary" />
+            <li className="flex items-center gap-1">
+              <BadgeCheckIcon className="not-sr-only fill-primary text-primary-foreground" />
               <span>Emphasis on ROI-driven solutions</span>
             </li>
-            <li className="flex gap-1 items-center">
-              <BadgeCheckIcon className="not-sr-only text-primary-foreground fill-primary" />
+            <li className="flex items-center gap-1">
+              <BadgeCheckIcon className="not-sr-only fill-primary text-primary-foreground" />
               <span>Expert team with diverse skill</span>
             </li>
-            <li className="flex gap-1 items-center">
-              <BadgeCheckIcon className="not-sr-only text-primary-foreground fill-primary" />
+            <li className="flex items-center gap-1">
+              <BadgeCheckIcon className="not-sr-only fill-primary text-primary-foreground" />
               <span>Proven track record of delivering results</span>
             </li>
           </ul>
@@ -327,9 +319,11 @@ export default function Home() {
       </section>
 
       <section className="container py-16 md:py-20 lg:py-24">
-        <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-4">Our Courses</h1>
-          <p className="text-md md:text-xl text-muted-foreground max-w-2xl mx-auto">
+        <header className="mb-8 space-y-2 text-center lg:space-y-5">
+          <h1 className="text-balance text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
+            Our Courses
+          </h1>
+          <p className="mx-auto max-w-[50ch] leading-relaxed">
             Expand your skills with our comprehensive selection of courses. From
             beginner to advanced, we have something for everyone.
           </p>
@@ -337,11 +331,11 @@ export default function Home() {
         <CourseCatalog />
       </section>
 
-      <section className="container grid py-16 md:py-20 lg:py-24 gap-8 md:gap-10 lg:grid-cols-[1fr,3fr] items-center">
+      <section className="container grid items-center gap-8 py-16 md:gap-10 md:py-20 lg:grid-cols-[1fr,3fr] lg:py-24">
         <div className="space-y-6 lg:space-y-8">
           {/* TODO: Fix duplicate */}
           <Link
-            className="inline-block group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+            className="group inline-block rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
             href="#"
           >
             <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
@@ -350,7 +344,7 @@ export default function Home() {
             </AnimatedShinyText>
           </Link>
 
-          <h2 className="text-2xl max-w-[20ch] md:text-3xl lg:text-5xl font-bold tracking-tighter text-balance">
+          <h2 className="max-w-[20ch] text-balance text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
             See how we&apos;ve helped our clients succeed
           </h2>
 
@@ -366,11 +360,11 @@ export default function Home() {
               {reviews.map((review, index) => (
                 <CarouselItem
                   key={index}
-                  className="md:basis-1/2 space-y-4 select-none"
+                  className="select-none space-y-4 md:basis-1/2"
                 >
-                  <div className="leading-relaxed font-medium">
+                  <blockquote className="font-medium leading-relaxed">
                     {review.description}
-                  </div>
+                  </blockquote>
                   <div className="flex items-center gap-2">
                     <Avatar>
                       <AvatarImage src={review.avatar} alt={review.name} />
@@ -384,7 +378,7 @@ export default function Home() {
           </Carousel>
         </div>
         <div className="relative">
-          <ArrowDecoration className="h-40 absolute hidden lg:block -left-28 top-1/4" />
+          <ArrowDecoration className="absolute -left-28 top-1/4 hidden h-40 lg:block" />
           <Image
             className="w-full"
             src="/testimonials.jpg"
@@ -392,7 +386,7 @@ export default function Home() {
             height={400}
             width={400}
           />
-          <div className="flex items-center gap-2 p-2 max-w-[35ch] rounded-md bg-secondary text-secondary-foreground shadow-md absolute top-5 left-5 lg:top-16 lg:-left-20">
+          <div className="absolute left-5 top-5 flex max-w-[35ch] items-center gap-2 rounded-md bg-secondary p-2 text-secondary-foreground shadow-md lg:-left-20 lg:top-16">
             <Avatar>
               <AvatarImage
                 src="https://avatars.githubusercontent.com/u/59228569"
@@ -402,7 +396,7 @@ export default function Home() {
             <p>The best Bootstrap theme we&apos;ve ever used 🔥</p>
           </div>
 
-          <div className="flex items-center gap-2 p-2 max-w-[35ch] rounded-md bg-white shadow-md absolute bottom-5 right-5 lg:bottom-16 lg:-left-20">
+          <div className="absolute bottom-5 right-5 flex max-w-[35ch] items-center gap-2 rounded-md bg-white p-2 shadow-md lg:-left-20 lg:bottom-16">
             <Avatar>
               <AvatarImage
                 src="https://avatars.githubusercontent.com/u/20110627"
@@ -413,141 +407,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <footer className="pt-16 md:pt-20 lg:pt-24 bg-secondary text-secondary-foreground">
-        <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 lg:grid-cols-[2fr,1fr,1fr,1fr]">
-          <div className="md:max-w-[30ch] space-y-4 lg:space-y-6">
-            <NexorithLogo className="h-12" />
-            <p>
-              A Bootstrap theme that&apos;s both stylish and functional, perfect
-              for any type of technology or corporate website.
-            </p>
-          </div>
-          <div className="space-y-4 lg:space-y-6">
-            <h2 className="font-bold text-xl">Quick Links</h2>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/" className="font-medium">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="font-medium">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="font-medium">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="font-medium">
-                  Courses
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="font-medium">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="font-medium">
-                  Career
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="font-medium">
-                  Become a Partner
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-4 lg:space-y-6">
-            <h2 className="font-bold text-xl">Community</h2>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/" className="font-medium">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="font-medium">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="font-medium">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="font-medium">
-                  Courses
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="font-medium">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="font-medium">
-                  Career
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="font-medium">
-                  Become a Partner
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-4 lg:space-y-6">
-            <h2 className="font-bold text-xl">Follow us on</h2>
-            <ul className="flex gap-1 flex-wrap">
-              <li>
-                <Link
-                  href="/#"
-                  className="inline-block rounded-md p-2 bg-white shadow-sm hover:bg-gray-200 transition-all"
-                >
-                  <FacebookIcon className="w-4 h-4 fill-secondary-foreground" />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#"
-                  className="inline-block rounded-md p-2 bg-white shadow-sm hover:bg-gray-200 transition-all"
-                >
-                  <InstagramIcon className="w-4 h-4" />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#"
-                  className="inline-block rounded-md p-2 bg-white shadow-sm hover:bg-gray-200 transition-all"
-                >
-                  <TwitterIcon className="w-4 h-4 fill-secondary-foreground" />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#"
-                  className="inline-block rounded-md p-2 bg-white shadow-sm hover:bg-gray-200 transition-all"
-                >
-                  <LinkedinIcon className="w-4 h-4 fill-secondary-foreground" />
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <hr className="container my-8" />
-
-        <div className="container pb-8">
-          Copyrights © {new Date().getFullYear()} Nexorith
-        </div>
-      </footer>
     </main>
   );
 }
