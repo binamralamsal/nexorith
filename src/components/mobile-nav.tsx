@@ -1,7 +1,10 @@
 "use client";
+
 import { useState } from "react";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -33,7 +36,7 @@ export function MobileNav() {
       <SheetContent side="left">
         <SheetHeader>
           <SheetTitle>
-            <NexorithLogo className="h-8" />
+            <NexorithLogo className="h-8 text-primary" />
           </SheetTitle>
         </SheetHeader>
 

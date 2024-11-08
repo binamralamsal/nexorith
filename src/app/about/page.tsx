@@ -56,7 +56,7 @@ export default function AboutPage() {
         </div>
         <div className="relative grid grid-cols-2 items-center gap-6 md:gap-0 md:px-28 lg:px-0">
           <div className="relative">
-            <SquigglyLines className="absolute -left-10 -top-10 h-16 text-primary" />
+            <SquigglyLines className="absolute -left-10 -top-10 hidden h-16 text-primary md:block" />
             <Image
               className="h-min w-full rounded-lg"
               src="/about-2.jpg"
@@ -88,15 +88,6 @@ export default function AboutPage() {
         <div className="text-center font-bold">
           Used by the world best companies
         </div>
-        {/* <div className="flex flex-wrap justify-center gap-x-5 gap-y-6 md:gap-x-10 lg:gap-x-20">
-       
-          <NexorithLogo className="h-8" />
-          <NexorithLogo className="h-8" />
-          <NexorithLogo className="h-8" />
-          <NexorithLogo className="h-8" />
-          <NexorithLogo className="h-8" />
-        </div> */}
-
         <Carousel
           opts={{ align: "start", slidesToScroll: 1, loop: true }}
           className="max-w-[90vw] md:max-w-[70w] lg:max-w-[75vw]"

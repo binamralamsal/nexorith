@@ -230,7 +230,7 @@ export default function Home() {
             width={400}
           />
           <HandWrittenLines className="absolute hidden h-20 md:-top-8 md:left-8 md:block lg:-left-20" />
-          <div className="absolute bottom-5 left-5 space-y-2 rounded-md bg-secondary p-4 shadow-sm md:left-14 lg:-left-8">
+          <div className="absolute bottom-5 left-5 space-y-2 rounded-md bg-secondary p-4 text-secondary-foreground shadow-sm md:left-14 lg:-left-8">
             <div className="flex items-center gap-2">
               <strong className="text-lg">5K+</strong>
               <AvatarCircles avatarUrls={avatarUrls} />

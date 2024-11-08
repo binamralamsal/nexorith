@@ -10,140 +10,187 @@ import {
 import { links } from "@/configs/site";
 
 import { NexorithLogo } from "./icons/logo";
+import { Button } from "./ui/button";
 
 export function SiteFooter() {
   return (
-    <footer className="pt-16 md:pt-20 lg:pt-24 bg-secondary text-secondary-foreground">
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 lg:grid-cols-[2fr,1fr,1fr,1fr]">
-        <div className="md:max-w-[30ch] space-y-4 lg:space-y-6">
-          <NexorithLogo className="h-12" />
-          <p>
+    <footer className="bg-secondary pt-16 text-secondary-foreground md:pt-20 lg:pt-24">
+      <div className="container grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-[2fr,1fr,1fr,1fr]">
+        <div className="space-y-4 md:max-w-[30ch] lg:space-y-6">
+          <NexorithLogo className="h-12 text-secondary-foreground" />
+          <p className="text-secondary-foreground/80">
             A Bootstrap theme that&apos;s both stylish and functional, perfect
             for any type of technology or corporate website.
           </p>
         </div>
         <div className="space-y-4 lg:space-y-6">
-          <h2 className="font-bold text-xl">Quick Links</h2>
+          <h2 className="text-xl font-bold">Quick Links</h2>
           <ul className="space-y-2">
             <li>
-              <Link href={links.home} className="font-medium">
+              <Link
+                href={links.home}
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link href={links.about} className="font-medium">
+              <Link
+                href={links.about}
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link href={links.services} className="font-medium">
+              <Link
+                href={links.services}
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+              >
                 Services
               </Link>
             </li>
             <li>
-              <Link href={links.courses} className="font-medium">
+              <Link
+                href={links.courses}
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+              >
                 Courses
               </Link>
             </li>
             <li>
-              <Link href={links.contact} className="font-medium">
+              <Link
+                href={links.contact}
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+              >
                 Contact
               </Link>
             </li>
             <li>
-              <Link href="/#" className="font-medium">
+              <Link
+                href="/#"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+              >
                 Career
               </Link>
             </li>
             <li>
-              <Link href="/" className="font-medium">
+              <Link
+                href="/"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+              >
                 Become a Partner
               </Link>
             </li>
           </ul>
         </div>
         <div className="space-y-4 lg:space-y-6">
-          <h2 className="font-bold text-xl">Community</h2>
+          <h2 className="text-xl font-bold">Community</h2>
           <ul className="space-y-2">
             <li>
-              <Link href="/" className="font-medium">
+              <Link
+                href="/"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/" className="font-medium">
+              <Link
+                href="/"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link href="/" className="font-medium">
+              <Link
+                href="/"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+              >
                 Services
               </Link>
             </li>
             <li>
-              <Link href="/" className="font-medium">
+              <Link
+                href="/"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+              >
                 Courses
               </Link>
             </li>
             <li>
-              <Link href="/" className="font-medium">
+              <Link
+                href="/"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+              >
                 Contact
               </Link>
             </li>
             <li>
-              <Link href="/" className="font-medium">
+              <Link
+                href="/"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+              >
                 Career
               </Link>
             </li>
             <li>
-              <Link href="/" className="font-medium">
+              <Link
+                href="/"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+              >
                 Become a Partner
               </Link>
             </li>
           </ul>
         </div>
         <div className="space-y-4 lg:space-y-6">
-          <h2 className="font-bold text-xl">Follow us on</h2>
-          <ul className="flex gap-1 flex-wrap">
+          <h2 className="text-xl font-bold">Follow us on</h2>
+          <ul className="flex flex-wrap gap-1">
             <li>
-              <Link
-                href="/#"
-                className="inline-block rounded-md p-2 bg-white shadow-sm hover:bg-gray-200 transition-all"
+              <Button
+                variant="secondary"
+                size="icon"
+                className="brightness-125 transition hover:brightness-200"
               >
-                <FacebookIcon className="w-4 h-4 fill-secondary-foreground" />
-              </Link>
+                <FacebookIcon className="h-4 w-4 fill-secondary-foreground" />
+              </Button>
             </li>
             <li>
-              <Link
-                href="/#"
-                className="inline-block rounded-md p-2 bg-white shadow-sm hover:bg-gray-200 transition-all"
+              <Button
+                variant="secondary"
+                size="icon"
+                className="brightness-125 transition hover:brightness-200"
               >
-                <InstagramIcon className="w-4 h-4" />
-              </Link>
+                <InstagramIcon className="h-4 w-4" />
+              </Button>
             </li>
             <li>
-              <Link
-                href="/#"
-                className="inline-block rounded-md p-2 bg-white shadow-sm hover:bg-gray-200 transition-all"
+              <Button
+                variant="secondary"
+                size="icon"
+                className="brightness-125 transition hover:brightness-200"
               >
-                <TwitterIcon className="w-4 h-4 fill-secondary-foreground" />
-              </Link>
+                <TwitterIcon className="h-4 w-4 fill-secondary-foreground" />
+              </Button>
             </li>
             <li>
-              <Link
-                href="/#"
-                className="inline-block rounded-md p-2 bg-white shadow-sm hover:bg-gray-200 transition-all"
+              <Button
+                variant="secondary"
+                size="icon"
+                className="brightness-125 transition hover:brightness-200"
               >
-                <LinkedinIcon className="w-4 h-4 fill-secondary-foreground" />
-              </Link>
+                <LinkedinIcon className="h-4 w-4 fill-secondary-foreground" />
+              </Button>
             </li>
           </ul>
         </div>
       </div>
 
-      <hr className="container my-8" />
+      <hr className="container my-8 border-secondary-foreground/10" />
 
-      <div className="container pb-8">
+      <div className="container pb-8 text-secondary-foreground/90">
         Copyrights © {new Date().getFullYear()} Nexorith
       </div>
     </footer>
