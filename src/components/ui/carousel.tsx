@@ -328,13 +328,13 @@ const CarouselDots = React.forwardRef<
   if (!scrollSnaps.length) return null;
 
   return (
-    <div className={cn("flex gap-3", className)} ref={ref} {...props}>
+    <div className={cn("flex gap-1.5", className)} ref={ref} {...props}>
       {scrollSnaps.map((_, index) => (
         <button
           key={index}
           aria-label={`Slide - ${index}`}
           className={cn(
-            "size-2.5 cursor-pointer rounded-full border border-primary",
+            "h-2 w-2 cursor-pointer rounded-full border border-primary",
             index === selectedIndex && "bg-primary",
           )}
           onClick={() => onDotButtonClick(index)}

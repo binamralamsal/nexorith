@@ -33,7 +33,8 @@ const config: Config = {
         "100p": "100%",
       },
       backgroundImage: {
-        hero: 'linear-gradient(to right, white 40%, rgba(255, 255, 255, 0) 80%), url("/hero.png")',
+        "testimonials-hero":
+          'linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/people-1.png")',
       },
       keyframes: {
         scale: {

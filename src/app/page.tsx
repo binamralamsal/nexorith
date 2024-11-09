@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,6 +20,8 @@ import {
 
 import { ArrowRightIcon, BadgeCheckIcon } from "lucide-react";
 
+import { reviews } from "@/configs/site";
+
 import { CourseCatalog } from "./course-catalog";
 
 // const services = [
@@ -39,44 +42,9 @@ const avatarUrls = [
   "https://avatars.githubusercontent.com/u/59228569",
 ];
 
-const reviews = [
-  {
-    description:
-      "Nexorith has transformed my understanding of web development! The courses are incredibly well-structured and informative.",
-    avatar: "https://avatars.githubusercontent.com/u/12345678",
-    name: "Aarav Shrestha",
-  },
-  {
-    description:
-      "I loved the hands-on approach of the Graphic Design Workshop. The instructors are knowledgeable and supportive.",
-    avatar: "https://avatars.githubusercontent.com/u/23456789",
-    name: "Sita Gurung",
-  },
-  {
-    description:
-      "The digital marketing strategies I learned from Nexorith helped boost my business's online presence significantly!",
-    avatar: "https://avatars.githubusercontent.com/u/34567890",
-    name: "Samir Thapa",
-  },
-  {
-    description:
-      "As a beginner, I found the Frontend Workshop to be very approachable and engaging. Highly recommended!",
-    avatar: "https://avatars.githubusercontent.com/u/45678901",
-    name: "Pooja Singh",
-  },
-  {
-    description:
-      "The courses at Nexorith provide a solid foundation in various technologies. I can't wait to apply what I've learned!",
-    avatar: "https://avatars.githubusercontent.com/u/56789012",
-    name: "Rajesh Karki",
-  },
-  {
-    description:
-      "Nexorith offers exceptional support throughout the learning process. I appreciate their commitment to student success.",
-    avatar: "https://avatars.githubusercontent.com/u/67890123",
-    name: "Anjali Rathi",
-  },
-];
+export const metadata: Metadata = {
+  title: "Home | Nexorith",
+};
 
 export default function Home() {
   return (

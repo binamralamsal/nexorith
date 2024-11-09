@@ -1,18 +1,24 @@
+import { Metadata } from "next";
 import Image from "next/image";
 
 import { NexorithLogo } from "@/components/icons/logo";
 import { SquigglyLines } from "@/components/icons/squiggly-lines";
 import { TorchIcon } from "@/components/icons/torch";
 import { UFOIcon } from "@/components/icons/ufo";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
+  CarouselDots,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import { StarIcon } from "lucide-react";
+import { BadgeCheckIcon, StarIcon } from "lucide-react";
+
+import { reviews } from "@/configs/site";
 
 const companies = [
   NexorithLogo,
@@ -36,6 +42,10 @@ const team = [
   { name: "Emma Watson", role: "Founder", photo: "/emma.jpg" },
   { name: "Emma Watson", role: "Founder", photo: "/emma.jpg" },
 ];
+
+export const metadata: Metadata = {
+  title: "About",
+};
 
 export default function AboutPage() {
   return (
@@ -229,6 +239,118 @@ export default function AboutPage() {
             </CarouselContent>
           </div>
         </Carousel>
+      </section>
+
+      <section className="container grid items-center gap-8 py-16 md:gap-10 md:py-20 lg:grid-cols-2 lg:py-24">
+        <div className="space-y-6 lg:space-y-8">
+          <h2 className="max-w-[20ch] text-balance text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
+            Effortless Download and Installation of Nexorith
+          </h2>
+
+          <p className="max-w-[56ch] text-balance">
+            Downloading Nexorith is a quick and easy process. Follow these
+            simple steps to start enjoying the benefits of our powerful
+            software.
+          </p>
+          <ul className="space-y-3">
+            <li className="flex items-center gap-1">
+              <BadgeCheckIcon className="not-sr-only fill-primary text-primary-foreground" />
+              <span>Emphasis on ROI-driven solutions</span>
+            </li>
+            <li className="flex items-center gap-1">
+              <BadgeCheckIcon className="not-sr-only fill-primary text-primary-foreground" />
+              <span>Expert team with diverse skill</span>
+            </li>
+            <li className="flex items-center gap-1">
+              <BadgeCheckIcon className="not-sr-only fill-primary text-primary-foreground" />
+              <span>Proven track record of delivering results</span>
+            </li>
+            <li className="flex items-center gap-1">
+              <BadgeCheckIcon className="not-sr-only fill-primary text-primary-foreground" />
+              <span>Proven track record of delivering results</span>
+            </li>
+            <li className="flex items-center gap-1">
+              <BadgeCheckIcon className="not-sr-only fill-primary text-primary-foreground" />
+              <span>Proven track record of delivering results</span>
+            </li>
+            <li className="flex items-center gap-1">
+              <BadgeCheckIcon className="not-sr-only fill-primary text-primary-foreground" />
+              <span>Proven track record of delivering results</span>
+            </li>
+            <li className="flex items-center gap-1">
+              <BadgeCheckIcon className="not-sr-only fill-primary text-primary-foreground" />
+              <span>Proven track record of delivering results</span>
+            </li>
+          </ul>
+        </div>
+        <div className="relative">
+          <Image
+            className="w-full"
+            src="/testimonials.jpg"
+            alt="Testimonials"
+            height={400}
+            width={400}
+          />
+        </div>
+      </section>
+
+      <section className="container">
+        <div className="bg-testimonials-hero grid items-center gap-8 rounded-md px-6 py-16 text-white md:gap-10 md:px-14 md:py-20 lg:grid-cols-2 lg:px-16 lg:py-24">
+          <div className="flex h-full flex-col justify-between">
+            <div className="space-y-2 lg:space-y-4">
+              <div className="textxl text-lg font-bold lg:text-2xl">
+                Innovate.
+              </div>
+              <div className="text-2xl font-bold lg:text-4xl">Elevate.</div>
+              <div className="text-4xl font-bold lg:text-5xl">Succeed.</div>
+            </div>
+            <Button
+              variant="secondary"
+              size="lg"
+              className="mt-8 self-start text-foreground"
+            >
+              Join our community
+            </Button>
+          </div>
+          <div className="relative rounded-md bg-white p-10 text-foreground">
+            <h2 className="mb-8 text-xl font-bold">
+              Here our customers experience
+            </h2>
+            <Carousel
+              opts={{ align: "start", slidesToScroll: 1, loop: true }}
+              className="max-w-[calc(100vw-10rem)] md:max-w-[calc(100vw-16rem)]"
+            >
+              <CarouselContent>
+                {reviews.map((review, index) => (
+                  <CarouselItem key={index} className="select-none space-y-6">
+                    <div className="flex gap-0.5">
+                      <StarIcon className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                      <StarIcon className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                      <StarIcon className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                      <StarIcon className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                      <StarIcon className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    </div>
+                    <blockquote className="font-medium leading-relaxed">
+                      {review.description}
+                    </blockquote>
+                    <div className="flex items-center gap-3">
+                      <Avatar>
+                        <AvatarImage src={review.avatar} alt={review.name} />
+                      </Avatar>
+                      <div className="gap-0.5">
+                        <div className="text-sm font-semibold">
+                          {review.name}
+                        </div>
+                        <div className="text-xs">Content Writer</div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselDots className="mt-6 justify-center lg:mt-8" />
+            </Carousel>
+          </div>
+        </div>
       </section>
     </main>
   );
