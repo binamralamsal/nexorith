@@ -8,6 +8,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 import { StarIcon } from "lucide-react";
@@ -23,6 +25,16 @@ const companies = [
   NexorithLogo,
   NexorithLogo,
   NexorithLogo,
+];
+
+const team = [
+  { name: "Emma Watson", role: "Founder", photo: "/emma.jpg" },
+  { name: "Emma Watson", role: "Founder", photo: "/emma.jpg" },
+  { name: "Emma Watson", role: "Founder", photo: "/emma.jpg" },
+  { name: "Emma Watson", role: "Founder", photo: "/emma.jpg" },
+  { name: "Emma Watson", role: "Founder", photo: "/emma.jpg" },
+  { name: "Emma Watson", role: "Founder", photo: "/emma.jpg" },
+  { name: "Emma Watson", role: "Founder", photo: "/emma.jpg" },
 ];
 
 export default function AboutPage() {
@@ -108,7 +120,7 @@ export default function AboutPage() {
       </section>
 
       <section className="container">
-        <div className="grid place-content-center place-items-center gap-20 rounded-md bg-secondary px-10 py-16 text-secondary-foreground md:grid-cols-[2.5fr,3fr] md:px-14 md:py-20 lg:px-16 lg:py-24">
+        <div className="grid-cols- grid place-content-center place-items-center gap-20 rounded-md bg-secondary px-6 py-16 text-secondary-foreground md:grid-cols-[2.5fr,3fr] md:px-14 md:py-20 lg:px-16 lg:py-24">
           <div className="flex w-full max-w-[60vw] flex-col">
             <div className="flex h-[250px] w-[250px] flex-col items-center justify-center space-y-0.5 rounded-[100%] border-2 border-secondary-foreground/80 text-center">
               <h3 className="text-3xl font-bold">
@@ -176,6 +188,47 @@ export default function AboutPage() {
             </ul>
           </div>
         </div>
+      </section>
+
+      <section className="container py-16 md:py-20 lg:py-24">
+        <Carousel
+          opts={{ align: "start", slidesToScroll: 1, loop: true }}
+          className="grid items-center gap-8 md:grid-cols-[1fr,2fr] md:gap-10"
+        >
+          <div className="space-y-8 md:space-y-14">
+            <h2 className="max-w-[20ch] text-balance text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
+              Meet Our Dedicated Team
+            </h2>
+            <div className="flex gap-2">
+              <CarouselPrevious className="static h-10 w-10" />
+              <CarouselNext className="static h-10 w-10" />
+            </div>
+          </div>
+          <div>
+            <CarouselContent className="-ml-8 max-w-[100vw] md:max-w-[60vw]">
+              {team.map((person, index) => (
+                <CarouselItem
+                  key={index}
+                  className="basis-[100%] select-none space-y-4 pl-8 sm:basis-1/2 md:basis-1/2 lg:basis-1/3"
+                >
+                  <Image
+                    src={person.photo}
+                    width={400}
+                    height={400}
+                    alt={person.name}
+                    className="w-full rounded-md"
+                  />
+                  <div className="text-center">
+                    <strong className="text-lg">{person.name}</strong>
+                    <div className="text-sm text-muted-foreground">
+                      {person.role}
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </div>
+        </Carousel>
       </section>
     </main>
   );
