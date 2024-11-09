@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,6 +8,10 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 import { MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Contact",
+};
 
 export default function ContactPage() {
   return (

@@ -20,7 +20,7 @@ import {
 
 import { ArrowRightIcon, BadgeCheckIcon } from "lucide-react";
 
-import { reviews } from "@/configs/site";
+import { avatarUrls, reviews } from "@/configs/site";
 
 import { CourseCatalog } from "./course-catalog";
 
@@ -33,14 +33,6 @@ import { CourseCatalog } from "./course-catalog";
 //   "App Development",
 //   "Web Development",
 // ];
-
-const avatarUrls = [
-  "https://avatars.githubusercontent.com/u/61900781",
-  "https://avatars.githubusercontent.com/u/16860528",
-  "https://avatars.githubusercontent.com/u/20110627",
-  "https://avatars.githubusercontent.com/u/106103625",
-  "https://avatars.githubusercontent.com/u/59228569",
-];
 
 export const metadata: Metadata = {
   title: "Home | Nexorith",
