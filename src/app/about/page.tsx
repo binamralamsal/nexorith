@@ -108,8 +108,27 @@ export default function AboutPage() {
       </section>
 
       <section className="container">
-        <div className="grid gap-6 rounded-md bg-secondary px-10 py-16 text-secondary-foreground md:grid-cols-2 md:px-14 md:py-20 lg:px-16 lg:py-24">
-          <div></div>
+        <div className="grid place-content-center place-items-center gap-20 rounded-md bg-secondary px-10 py-16 text-secondary-foreground md:grid-cols-[2.5fr,3fr] md:px-14 md:py-20 lg:px-16 lg:py-24">
+          <div className="flex w-full max-w-[60vw] flex-col">
+            <div className="flex h-[250px] w-[250px] flex-col items-center justify-center space-y-0.5 rounded-[100%] border-2 border-secondary-foreground/80 text-center">
+              <h3 className="text-3xl font-bold">
+                600<span className="text-primary">+</span>
+              </h3>
+              <span>Happy Customers</span>
+            </div>
+            <div className="flex h-[200px] w-[200px] flex-col items-center justify-center space-y-0.5 self-end rounded-[100%] bg-secondary text-center brightness-105 xl:-mt-16">
+              <h3 className="text-3xl font-bold">
+                250<span className="text-primary">+</span>
+              </h3>
+              <span>Completed Projects</span>
+            </div>
+            <div className="flex h-[200px] w-[200px] flex-col items-center justify-center space-y-0.5 self-center rounded-[100%] bg-primary text-center text-primary-foreground">
+              <h3 className="text-3xl font-bold">
+                250<span className="text-primary-foreground">+</span>
+              </h3>
+              <span>Completed Projects</span>
+            </div>
+          </div>
           <div className="space-y-6 lg:space-y-8">
             <h2 className="text-balance text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
               Shaping Digital Futures
