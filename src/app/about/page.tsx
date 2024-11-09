@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
 
-import { NexorithLogo } from "@/components/icons/logo";
 import { PaperPlaneIcon } from "@/components/icons/paper-plane";
 import { SquigglyLines } from "@/components/icons/squiggly-lines";
 import { TorchIcon } from "@/components/icons/torch";
@@ -19,20 +18,7 @@ import {
 
 import { BadgeCheckIcon, StarIcon } from "lucide-react";
 
-import { reviews } from "@/configs/site";
-
-const companies = [
-  NexorithLogo,
-  NexorithLogo,
-  NexorithLogo,
-  NexorithLogo,
-  NexorithLogo,
-  NexorithLogo,
-  NexorithLogo,
-  NexorithLogo,
-  NexorithLogo,
-  NexorithLogo,
-];
+import { companies, reviews } from "@/configs/site";
 
 const team = [
   { name: "Emma Watson", role: "Founder", photo: "/emma.jpg" },
@@ -115,7 +101,7 @@ export default function AboutPage() {
         </div>
         <Carousel
           opts={{ align: "start", slidesToScroll: 1, loop: true }}
-          className="max-w-[90vw] md:max-w-[70w] lg:max-w-[75vw]"
+          className={"max-w-[90vw] md:max-w-[70w] lg:max-w-[75vw]"}
         >
           <CarouselContent className="-ml-4">
             {companies.map((Company, index) => (

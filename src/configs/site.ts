@@ -1,3 +1,5 @@
+import { NexorithLogo } from "@/components/icons/logo";
+
 export const links = {
   home: "/",
   about: "/about",
@@ -61,4 +63,17 @@ export const avatarUrls = [
   "https://avatars.githubusercontent.com/u/20110627",
   "https://avatars.githubusercontent.com/u/106103625",
   "https://avatars.githubusercontent.com/u/59228569",
+];
+
+export const companies = [
+  NexorithLogo,
+  NexorithLogo,
+  NexorithLogo,
+  NexorithLogo,
+  NexorithLogo,
+  NexorithLogo,
+  NexorithLogo,
+  NexorithLogo,
+  NexorithLogo,
+  NexorithLogo,
 ];

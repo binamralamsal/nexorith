@@ -280,9 +280,9 @@ export default function Home() {
 
       <section className="container py-16 md:py-20 lg:py-24">
         <header className="mb-8 space-y-2 text-center lg:space-y-5">
-          <h1 className="text-balance text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
+          <h2 className="text-balance text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
             Our Courses
-          </h1>
+          </h2>
           <p className="mx-auto max-w-[50ch] leading-relaxed">
             Expand your skills with our comprehensive selection of courses. From
             beginner to advanced, we have something for everyone.
