@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import { NexorithLogo } from "@/components/icons/logo";
 import { SquigglyLines } from "@/components/icons/squiggly-lines";
+import { TorchIcon } from "@/components/icons/torch";
+import { UFOIcon } from "@/components/icons/ufo";
 import {
   Carousel,
   CarouselContent,
@@ -103,6 +105,58 @@ export default function AboutPage() {
             ))}
           </CarouselContent>
         </Carousel>
+      </section>
+
+      <section className="container">
+        <div className="grid gap-6 rounded-md bg-secondary px-10 py-16 text-secondary-foreground md:grid-cols-2 md:px-14 md:py-20 lg:px-16 lg:py-24">
+          <div></div>
+          <div className="space-y-6 lg:space-y-8">
+            <h2 className="text-balance text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
+              Shaping Digital Futures
+            </h2>
+            <p className="leading-relaxed text-secondary-foreground/80 md:max-w-[55ch]">
+              At Nexorith, our vision is to pioneer a new era of software
+              solutions. We believe in empowering innovation, enabling
+              businesses to shape their digital futures, and creating a world
+              where software knows no bounds.
+            </p>
+            <ul className="space-y-6 lg:space-y-8">
+              <li className="flex items-start gap-4">
+                <TorchIcon className="not-sr-only h-8 text-primary" />
+                <div className="space-y-2">
+                  <h3 className="text-lg font-bold">Innovative Solutions</h3>
+                  <p className="text-secondary-foreground/80 lg:max-w-[50ch]">
+                    We pride ourselves on crafting innovative software solutions
+                    that address real-world challenges and drive digital
+                    transformation.
+                  </p>
+                </div>
+              </li>
+              <li className="flex items-start gap-4">
+                <UFOIcon className="not-sr-only h-8 text-primary" />
+                <div className="space-y-2">
+                  <h3 className="text-lg font-bold">Client-Centric Approach</h3>
+                  <p className="text-secondary-foreground/80 lg:max-w-[50ch]">
+                    Our client-centric approach ensures that we understand your
+                    unique needs and provide tailored solutions that exceed
+                    expectations.
+                  </p>
+                </div>
+              </li>
+              <li className="flex items-start gap-4">
+                <TorchIcon className="not-sr-only h-8 text-primary" />
+                <div className="space-y-2">
+                  <h3 className="text-lg font-bold">Experienced Team</h3>
+                  <p className="text-secondary-foreground/80 lg:max-w-[50ch]">
+                    Our team of experienced professionals is committed to
+                    delivering excellence and quality in every project we
+                    undertake.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
     </main>
   );

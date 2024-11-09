@@ -17,7 +17,7 @@ export function SiteFooter() {
     <footer className="bg-secondary pt-16 text-secondary-foreground md:pt-20 lg:pt-24">
       <div className="container grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-[2fr,1fr,1fr,1fr]">
         <div className="space-y-4 md:max-w-[30ch] lg:space-y-6">
-          <NexorithLogo className="h-12 text-secondary-foreground" />
+          <NexorithLogo className="h-12 text-primary" />
           <p className="text-secondary-foreground/80">
             A Bootstrap theme that&apos;s both stylish and functional, perfect
             for any type of technology or corporate website.
@@ -29,7 +29,7 @@ export function SiteFooter() {
             <li>
               <Link
                 href={links.home}
-                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary"
               >
                 Home
               </Link>
@@ -37,7 +37,7 @@ export function SiteFooter() {
             <li>
               <Link
                 href={links.about}
-                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary"
               >
                 About
               </Link>
@@ -45,7 +45,7 @@ export function SiteFooter() {
             <li>
               <Link
                 href={links.services}
-                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary"
               >
                 Services
               </Link>
@@ -53,7 +53,7 @@ export function SiteFooter() {
             <li>
               <Link
                 href={links.courses}
-                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary"
               >
                 Courses
               </Link>
@@ -61,7 +61,7 @@ export function SiteFooter() {
             <li>
               <Link
                 href={links.contact}
-                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary"
               >
                 Contact
               </Link>
@@ -69,7 +69,7 @@ export function SiteFooter() {
             <li>
               <Link
                 href="/#"
-                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary"
               >
                 Career
               </Link>
@@ -77,7 +77,7 @@ export function SiteFooter() {
             <li>
               <Link
                 href="/"
-                className="font-medium text-secondary-foreground/80 transition hover:text-primary/100 hover:brightness-[2.5]"
+                className="font-medium text-secondary-foreground/80 transition hover:text-primary"
               >
                 Become a Partner
               </Link>

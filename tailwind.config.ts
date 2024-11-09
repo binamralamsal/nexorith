@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   darkMode: ["class"],
@@ -12,6 +13,8 @@ const config: Config = {
     extend: {
       screens: {
         xs: "480px",
+        xl: "1200px",
+        "2xl": "1400px",
       },
       animationDuration: {
         "2s": "2s",
@@ -23,9 +26,11 @@ const config: Config = {
       container: {
         center: true,
         padding: "1rem",
-        screens: {
-          "2xl": "1300px",
-        },
+      },
+      maxWidth: {
+        "1300": "1300px",
+        "1140": "1140px",
+        "100p": "100%",
       },
       backgroundImage: {
         hero: 'linear-gradient(to right, white 40%, rgba(255, 255, 255, 0) 80%), url("/hero.png")',
@@ -131,6 +136,24 @@ const config: Config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [
+    tailwindcssAnimate,
+    plugin(function ({ addComponents }) {
+      addComponents({
+        ".container": {
+          maxWidth: "100%", // Default for small screens (below 768px)
+          "@screen md": {
+            maxWidth: "96%", // Above 768px
+          },
+          "@screen xl": {
+            maxWidth: "1140px", // Above 1200px
+          },
+          "@screen 2xl": {
+            maxWidth: "1300px", // Above 1400px
+          },
+        },
+      });
+    }),
+  ],
 };
 export default config;
