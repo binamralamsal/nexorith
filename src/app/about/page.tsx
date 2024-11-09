@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 import { NexorithLogo } from "@/components/icons/logo";
+import { PaperPlaneIcon } from "@/components/icons/paper-plane";
 import { SquigglyLines } from "@/components/icons/squiggly-lines";
 import { TorchIcon } from "@/components/icons/torch";
 import { UFOIcon } from "@/components/icons/ufo";
@@ -351,6 +352,19 @@ export default function AboutPage() {
             </Carousel>
           </div>
         </div>
+      </section>
+
+      <section className="container grid place-items-center space-y-5 py-16 text-center md:py-20 lg:py-24">
+        <PaperPlaneIcon className="mb-2 h-20" />
+        <h1 className="text-balance text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
+          We&apos;re hiring!
+        </h1>
+        <p className="text-balance">
+          Our team is growing faster and we&apos;re always looking for a smart
+          people
+        </p>
+
+        <Button size="lg">Learn More</Button>
       </section>
     </main>
   );
