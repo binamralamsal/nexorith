@@ -49,7 +49,7 @@ export default function CoursePage() {
             <h1 className="text-balance text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
               The Complete Digital Marketing Course - 12 Courses in 1
             </h1>
-            <p className="leading-relaxed">
+            <p className="leading-relaxed text-gray-600">
               Satisfied conveying a dependent contented he gentleman agreeable
               do be. Warrant private blushes removed an in equally totally if.
               Delivered dejection necessary objection do Mr prevailed. Mr
@@ -91,7 +91,7 @@ export default function CoursePage() {
           </section>
 
           <section>
-            <Card>
+            <Card className="shadow-none">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold md:text-3xl lg:text-4xl">
                   <h2>Course description</h2>
@@ -99,7 +99,7 @@ export default function CoursePage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <Expander initialVisibleItems={3}>
-                  <ExpanderContent className="space-y-4 leading-relaxed">
+                  <ExpanderContent className="space-y-4 leading-relaxed text-gray-600">
                     <p>
                       Welcome to the Digital Marketing Ultimate Course Bundle -
                       12 Courses in 1 (Over 36 hours of content)
@@ -196,7 +196,7 @@ export default function CoursePage() {
           </section>
 
           <section>
-            <Card>
+            <Card className="shadow-none">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold md:text-3xl lg:text-4xl">
                   <h2>Curriculum</h2>
@@ -263,7 +263,7 @@ export default function CoursePage() {
           </section>
 
           <section>
-            <Card>
+            <Card className="shadow-none">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold md:text-3xl lg:text-4xl">
                   <h2>Frequently Asked Questions</h2>
@@ -326,7 +326,7 @@ export default function CoursePage() {
         </div>
         <div className="space-y-8 pb-6 md:sticky md:top-24 md:self-start md:pb-8 lg:pb-10">
           <section>
-            <Card>
+            <Card className="shadow-none">
               <CardHeader className="space-y-4">
                 <CardTitle className="text-xl font-bold md:text-2xl lg:text-3xl">
                   Rs. 1000
@@ -344,7 +344,7 @@ export default function CoursePage() {
                       <BookOpenTextIcon className="h-4 w-4 text-primary" />
                       <span>Lectures</span>
                     </div>
-                    <span>30</span>
+                    <span className="text-gray-600">30</span>
                   </div>
 
                   <div className="flex justify-between">
@@ -352,7 +352,7 @@ export default function CoursePage() {
                       <ClockIcon className="h-4 w-4 text-primary" />
                       <span>Duration</span>
                     </div>
-                    <span>4h 50m</span>
+                    <span className="text-gray-600">4h 50m</span>
                   </div>
 
                   <div className="flex justify-between">
@@ -360,7 +360,7 @@ export default function CoursePage() {
                       <SignalIcon className="h-4 w-4 text-primary" />
                       <span>Skills</span>
                     </div>
-                    <span>All levels</span>
+                    <span className="text-gray-600">All levels</span>
                   </div>
 
                   <div className="flex justify-between">
@@ -368,7 +368,7 @@ export default function CoursePage() {
                       <GlobeIcon className="h-4 w-4 text-primary" />
                       <span>Language</span>
                     </div>
-                    <span>Nepali</span>
+                    <span className="text-gray-600">Nepali</span>
                   </div>
 
                   <div className="flex justify-between">
@@ -376,7 +376,7 @@ export default function CoursePage() {
                       <CalendarIcon className="h-4 w-4 text-primary" />
                       <span>Deadline</span>
                     </div>
-                    <span>Nov 30 2021</span>
+                    <span className="text-gray-600">Nov 30 2021</span>
                   </div>
 
                   <div className="flex justify-between">
@@ -384,7 +384,7 @@ export default function CoursePage() {
                       <MedalIcon className="h-4 w-4 text-primary" />
                       <span>Certificate</span>
                     </div>
-                    <span>Yes</span>
+                    <span className="text-gray-600">Yes</span>
                   </div>
                 </div>
               </CardContent>
@@ -399,7 +399,9 @@ export default function CoursePage() {
                   </Avatar>
                   <div>
                     <div className="text-xl font-semibold">By Nathan Esty</div>
-                    <div className="-mt-0.5 text-sm">Content Writer</div>
+                    <div className="-mt-0.5 text-sm text-gray-600">
+                      Content Writer
+                    </div>
                   </div>
                 </div>
 
