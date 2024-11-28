@@ -1,3 +1,7 @@
+import { ReactNode } from "react";
+
+import { notFound } from "next/navigation";
+
 import {
   Accordion,
   AccordionContent,
@@ -29,7 +33,6 @@ import "@vidstack/react/player/styles/default/layouts/video.css";
 import "@vidstack/react/player/styles/default/theme.css";
 import {
   BookOpenTextIcon,
-  CalendarIcon,
   CircleCheckIcon,
   ClockIcon,
   GlobeIcon,
@@ -37,56 +40,68 @@ import {
   InfoIcon,
   MedalIcon,
   SignalIcon,
+  StarHalfIcon,
   StarIcon,
 } from "lucide-react";
 
-export default function CoursePage() {
+import { courses } from "@/courses";
+
+export default async function CoursePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const course = courses.find((c) => c.slug === slug);
+  if (!course) return notFound();
+
   return (
     <main>
       <div className="container grid gap-6 md:grid-cols-[2fr,1fr]">
         <div className="space-y-8 py-6 md:py-8 lg:py-10">
           <section className="space-y-4">
             <h1 className="text-balance text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
-              The Complete Digital Marketing Course - 12 Courses in 1
+              {course.title}
             </h1>
             <p className="leading-relaxed text-gray-600">
-              Satisfied conveying a dependent contented he gentleman agreeable
-              do be. Warrant private blushes removed an in equally totally if.
-              Delivered dejection necessary objection do Mr prevailed. Mr
-              feeling does chiefly cordial in do.
+              {course.shortDescription}
             </p>
 
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-1">
                 <StarIcon className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                <span>5.0/5.0</span>
+                <span>{course.rating}/5.0</span>
               </div>
               <div className="flex items-center gap-1">
                 <GraduationCapIcon className="h-5 w-5" />
-                <span>12k Enrolled</span>
+                <span>{course.enrolledCount} Enrolled</span>
               </div>
               <div className="flex items-center gap-1">
                 <SignalIcon className="h-5 w-5" />
-                <span>All levels</span>
+                <span>{course.level}</span>
               </div>
               <div className="flex items-center gap-1">
                 <InfoIcon className="h-5 w-5" />
-                <span>Last updated 09/2021</span>
+                <span>
+                  Last updated{" "}
+                  {course.lastUpdatedDate.toLocaleDateString("en-US", {
+                    month: "2-digit",
+                    year: "numeric",
+                  })}
+                </span>
               </div>
               <div className="flex items-center gap-1">
                 <GlobeIcon className="h-5 w-5" />
-                <span>Nepali</span>
+                <span>{course.language}</span>
               </div>
             </div>
           </section>
 
           <section>
-            <MediaPlayer title="Sprite Fight" src="youtube/_cMxraX_5RE">
+            <MediaPlayer title={course.title} src={course.videoUrl}>
               <MediaProvider />
-              <DefaultVideoLayout
-                thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
-                icons={defaultLayoutIcons}
-              />
+              <DefaultVideoLayout icons={defaultLayoutIcons} />
             </MediaPlayer>
           </section>
 
@@ -100,96 +115,23 @@ export default function CoursePage() {
               <CardContent className="space-y-4">
                 <Expander initialVisibleItems={3}>
                   <ExpanderContent className="space-y-4 leading-relaxed text-gray-600">
-                    <p>
-                      Welcome to the Digital Marketing Ultimate Course Bundle -
-                      12 Courses in 1 (Over 36 hours of content)
-                    </p>
-                    <p>
-                      In this practical hands-on training, you’re going to learn
-                      to become a digital marketing expert with this ultimate
-                      course bundle that includes 12 digital marketing courses
-                      in 1!
-                    </p>
-                    <p>
-                      If you wish to find out the skills that should be covered
-                      in a basic digital marketing course syllabus in India or
-                      anywhere around the world, then reading this blog will
-                      help. Before we delve into the advanced digital marketing
-                      course syllabus, let’s look at the scope of digital
-                      marketing and what the future holds.
-                    </p>
-                    <p>
-                      We focus a great deal on the understanding of behavioral
-                      psychology and influence triggers which are crucial for
-                      becoming a well rounded Digital Marketer. We understand
-                      that theory is important to build a solid foundation, we
-                      understand that theory alone isn’t going to get the job
-                      done so that’s why this course is packed with practical
-                      hands-on examples that you can follow step by step.
-                    </p>
-                    <p>
-                      Behavioral psychology and influence triggers which are
-                      crucial for becoming a well rounded Digital Marketer. We
-                      understand that theory is important to build a solid
-                      foundation, we understand that theory alone isn’t going to
-                      get the job done so that’s why this course is packed with
-                      practical hands-on examples that you can follow step by
-                      step.
-                    </p>
+                    {course.longDescription}
                   </ExpanderContent>
 
                   <ExpanderButton size="sm" />
                 </Expander>
 
                 <h3 className="text-lg font-semibold md:text-xl lg:text-2xl">
-                  What you’ll learn
+                  What you&apos;ll learn
                 </h3>
 
                 <ul className="space-y-1 md:columns-2">
-                  <li className="flex gap-1">
-                    <CircleCheckIcon className="not-sr-only h-6 fill-primary text-white" />
-                    <span>Digital marketing course introduction</span>
-                  </li>
-                  <li className="flex gap-1">
-                    <CircleCheckIcon className="not-sr-only h-6 fill-primary text-white" />
-                    <span>Customer Life cycle</span>
-                  </li>
-                  <li className="flex gap-1">
-                    <CircleCheckIcon className="not-sr-only h-6 fill-primary text-white" />
-                    <span>What is Search engine optimization(SEO)</span>
-                  </li>
-                  <li className="flex gap-1">
-                    <CircleCheckIcon className="not-sr-only h-6 fill-primary text-white" />
-                    <span>Facebook ADS</span>
-                  </li>
-                  <li className="flex gap-1">
-                    <CircleCheckIcon className="not-sr-only h-6 fill-primary text-white" />
-                    <span>Facebook Messenger Chatbot</span>
-                  </li>
-                  <li className="flex gap-1">
-                    <CircleCheckIcon className="not-sr-only h-6 fill-primary text-white" />
-                    <span>Search engine optimization tools</span>
-                  </li>
-                  <li className="flex gap-1">
-                    <CircleCheckIcon className="not-sr-only h-6 fill-primary text-white" />
-                    <span>Why SEO</span>
-                  </li>
-                  <li className="flex gap-1">
-                    <CircleCheckIcon className="not-sr-only h-6 fill-primary text-white" />
-                    <span>URL Structure</span>
-                  </li>
-                  <li className="flex gap-1">
-                    <CircleCheckIcon className="not-sr-only h-6 fill-primary text-white" />
-                    <span>Featured Snippet</span>
-                  </li>
-                  <li className="flex gap-1">
-                    <CircleCheckIcon className="not-sr-only h-6 fill-primary text-white" />
-                    <span>SEO tips and tricks</span>
-                  </li>
-                  <li className="flex gap-1">
-                    <CircleCheckIcon className="not-sr-only h-6 fill-primary text-white" />
-                    <span>Google tag manager</span>
-                  </li>
+                  {course.keyLearnings.map((keylearning, index) => (
+                    <li key={index} className="flex gap-1">
+                      <CircleCheckIcon className="not-sr-only h-6 fill-primary text-white" />
+                      <span>{keylearning}</span>
+                    </li>
+                  ))}
                 </ul>
               </CardContent>
             </Card>
@@ -205,49 +147,18 @@ export default function CoursePage() {
               <Expander initialVisibleItems={2}>
                 <CardContent>
                   <ExpanderContent className="space-y-4 leading-relaxed">
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold md:text-xl lg:text-2xl">
-                        Introduction of Digital Marketing (3 lectures)
-                      </h3>
-                      <ul className="ml-4 list-disc space-y-1">
-                        <li>Introduction</li>
-                        <li>What is Digital Marketing</li>
-                        <li>Type of Digital Marketing</li>
-                      </ul>
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold md:text-xl lg:text-2xl">
-                        Customer Life cycle (4 lectures)
-                      </h3>
-                      <ul className="ml-4 list-disc space-y-1">
-                        <li>What is Digital Marketing</li>
-                        <li>15 Tips for Writing Magnetic Headlines</li>
-                        <li>How to Write Like Your Customers Talk</li>
-                        <li>How to Flip Features Into Benefits</li>
-                      </ul>
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold md:text-xl lg:text-2xl">
-                        Customer Life cycle (4 lectures)
-                      </h3>
-                      <ul className="ml-4 list-disc space-y-1">
-                        <li>What is Digital Marketing</li>
-                        <li>15 Tips for Writing Magnetic Headlines</li>
-                        <li>How to Write Like Your Customers Talk</li>
-                        <li>How to Flip Features Into Benefits</li>
-                      </ul>
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold md:text-xl lg:text-2xl">
-                        Customer Life cycle (4 lectures)
-                      </h3>
-                      <ul className="ml-4 list-disc space-y-1">
-                        <li>What is Digital Marketing</li>
-                        <li>15 Tips for Writing Magnetic Headlines</li>
-                        <li>How to Write Like Your Customers Talk</li>
-                        <li>How to Flip Features Into Benefits</li>
-                      </ul>
-                    </div>
+                    {course.modules.map((module, index) => (
+                      <div key={index} className="space-y-2">
+                        <h3 className="text-lg font-semibold md:text-xl lg:text-2xl">
+                          {module.title} ({module.lectures.length} lectures)
+                        </h3>
+                        <ul className="ml-4 list-disc space-y-1">
+                          {module.lectures.map((lecture, lectureIdx) => (
+                            <li key={lectureIdx}>{lecture}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
                   </ExpanderContent>
                 </CardContent>
                 <CardFooter>
@@ -271,54 +182,18 @@ export default function CoursePage() {
               </CardHeader>
               <CardContent>
                 <Accordion type="multiple" className="space-y-4">
-                  <AccordionItem
-                    value="item-1"
-                    className="rounded-md border bg-white px-6 py-3 shadow-sm"
-                  >
-                    <AccordionTrigger className="font-bold">
-                      How Digital Marketing Work?
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      Preference any astonished unreserved Mrs. Prosperous
-                      understood Middletons in conviction an uncommonly do.
-                      Supposing so be resolving breakfast am or perfectly. It
-                      drew a hill from me. Valley by oh twenty direct me so.
-                      Departure defective arranging rapturous did believe him
-                      all had supported. Family months lasted simple set nature
-                      vulgar him. Picture for attempt joy excited ten carried
-                      manners talking how. Suspicion neglected the resolving
-                      agreement perceived at an. Comfort reached gay perhaps
-                      chamber his six detract besides add.
-                    </AccordionContent>
-                  </AccordionItem>
-
-                  <AccordionItem
-                    value="item-2"
-                    className="rounded-md border bg-white px-6 py-3 shadow-sm"
-                  >
-                    <AccordionTrigger className="font-bold">
-                      What is SEO?
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      Meant balls it if up doubt small purse. Required his you
-                      put the outlived answered position. A pleasure exertion if
-                      believed provided to. All led out world this music while
-                      asked. Paid mind even sons does he door no. Attended
-                      overcame repeated it is perceived Marianne in. I think on
-                      style child of. Servants moreover in sensible it ye
-                      possible. Person she control of to beginnings view looked
-                      eyes Than continues its and because and given and shown
-                      creating curiously to more in are man were smaller by we
-                      instead the these sighed Avoid in the sufficient me real
-                      man longer of his how her for countries to brains warned
-                      notch important Finds be to the of on the increased
-                      explain noise of power deep asking contribution this live
-                      of suppliers goals bit separated poured sort several the
-                      was organization the if relations go work after mechanic
-                      But we&apos;ve area wasn&apos;t everything needs of and
-                      doctor where would a of
-                    </AccordionContent>
-                  </AccordionItem>
+                  {course.faqs.map((faq, index) => (
+                    <AccordionItem
+                      key={faq.question}
+                      value={`question-${index}`}
+                      className="rounded-md border bg-white px-6 py-3 shadow-sm"
+                    >
+                      <AccordionTrigger className="font-bold">
+                        {faq.question}
+                      </AccordionTrigger>
+                      <AccordionContent>{faq.answer}</AccordionContent>
+                    </AccordionItem>
+                  ))}
                 </Accordion>
               </CardContent>
             </Card>
@@ -329,7 +204,7 @@ export default function CoursePage() {
             <Card className="shadow-none">
               <CardHeader className="space-y-4">
                 <CardTitle className="text-xl font-bold md:text-2xl lg:text-3xl">
-                  Rs. 1000
+                  Rs. {course.price}
                 </CardTitle>
 
                 <Button size="lg">Buy now</Button>
@@ -344,7 +219,12 @@ export default function CoursePage() {
                       <BookOpenTextIcon className="h-4 w-4 text-primary" />
                       <span>Lectures</span>
                     </div>
-                    <span className="text-gray-600">30</span>
+                    <span className="text-gray-600">
+                      {course.modules.reduce(
+                        (acc, value) => acc + value.lectures.length,
+                        0,
+                      )}
+                    </span>
                   </div>
 
                   <div className="flex justify-between">
@@ -352,7 +232,7 @@ export default function CoursePage() {
                       <ClockIcon className="h-4 w-4 text-primary" />
                       <span>Duration</span>
                     </div>
-                    <span className="text-gray-600">4h 50m</span>
+                    <span className="text-gray-600">{course.duration}</span>
                   </div>
 
                   <div className="flex justify-between">
@@ -360,7 +240,7 @@ export default function CoursePage() {
                       <SignalIcon className="h-4 w-4 text-primary" />
                       <span>Skills</span>
                     </div>
-                    <span className="text-gray-600">All levels</span>
+                    <span className="text-gray-600">{course.level}</span>
                   </div>
 
                   <div className="flex justify-between">
@@ -368,15 +248,7 @@ export default function CoursePage() {
                       <GlobeIcon className="h-4 w-4 text-primary" />
                       <span>Language</span>
                     </div>
-                    <span className="text-gray-600">Nepali</span>
-                  </div>
-
-                  <div className="flex justify-between">
-                    <div className="flex items-center gap-2">
-                      <CalendarIcon className="h-4 w-4 text-primary" />
-                      <span>Deadline</span>
-                    </div>
-                    <span className="text-gray-600">Nov 30 2021</span>
+                    <span className="text-gray-600">{course.language}</span>
                   </div>
 
                   <div className="flex justify-between">
@@ -384,7 +256,9 @@ export default function CoursePage() {
                       <MedalIcon className="h-4 w-4 text-primary" />
                       <span>Certificate</span>
                     </div>
-                    <span className="text-gray-600">Yes</span>
+                    <span className="text-gray-600">
+                      {course.isCertificateAvailable ? "Yes" : "No"}
+                    </span>
                   </div>
                 </div>
               </CardContent>
@@ -393,27 +267,23 @@ export default function CoursePage() {
                 <div className="flex items-center gap-3">
                   <Avatar className="h-14 w-14">
                     <AvatarImage
-                      src="https://avatars.githubusercontent.com/u/12345678"
+                      src={course.instructor.profilePicUrl}
                       alt="Author"
                     />
                   </Avatar>
                   <div>
-                    <div className="text-xl font-semibold">By Nathan Esty</div>
+                    <div className="text-xl font-semibold">
+                      By {course.instructor.name}
+                    </div>
                     <div className="-mt-0.5 text-sm text-gray-600">
-                      Content Writer
+                      {course.instructor.role}
                     </div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-1">
-                  <div className="flex gap-0.5">
-                    <StarIcon className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    <StarIcon className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    <StarIcon className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    <StarIcon className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    <StarIcon className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  </div>
-                  <span>5.0/5.0</span>
+                  <Rating rating={course.instructor.rating} />
+                  <span>{course.instructor.rating}/5.0</span>
                 </div>
               </CardFooter>
             </Card>
@@ -422,4 +292,39 @@ export default function CoursePage() {
       </div>
     </main>
   );
+}
+
+interface RatingProps {
+  rating: number;
+  totalStars?: number;
+}
+
+function Rating({ rating, totalStars = 5 }: RatingProps) {
+  const renderStars = () => {
+    const stars: ReactNode[] = [];
+    for (let i = 1; i <= totalStars; i++) {
+      if (rating >= i) {
+        stars.push(
+          <StarIcon
+            key={i}
+            className="h-4 w-4 fill-yellow-400 text-yellow-400"
+          />,
+        );
+      } else if (rating > i - 1 && rating < i) {
+        stars.push(
+          <StarHalfIcon
+            key={i}
+            className="h-4 w-4 fill-yellow-400 text-yellow-400"
+          />,
+        );
+      } else {
+        stars.push(
+          <StarIcon key={i} className="h-4 w-4 fill-none text-gray-300" />,
+        );
+      }
+    }
+    return stars;
+  };
+
+  return <div className="flex gap-0.5">{renderStars()}</div>;
 }

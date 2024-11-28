@@ -13,8 +13,8 @@ export const navLinks = [
   { href: links.home, label: "Home" },
   { href: links.about, label: "About" },
   { href: links.services, label: "Services" },
-  { href: links.blogs, label: "Blogs" },
-  { href: links.courses, label: "Learn" },
+  // { href: links.blogs, label: "Blogs" },
+  { href: links.courses, label: "Courses" },
   { href: links.contact, label: "Contact" },
 ];
 

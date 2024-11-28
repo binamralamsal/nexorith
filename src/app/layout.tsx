@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 import { inter } from "@/libs/fonts";
+import { cn } from "@/utils/cn";
 
 import "./globals.css";
 
@@ -23,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body className={cn(inter.className, "antialiased")}>
         <SiteHeader />
         {children}
         <SiteFooter />
