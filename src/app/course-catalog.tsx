@@ -89,7 +89,7 @@ export function CourseCards({
       {...divProps}
     >
       {filteredCourses.map((course) => (
-        <Card key={course.id} className="flex flex-col">
+        <Card key={course.id} className="flex flex-col shadow-sm">
           <CardHeader className="p-0">
             <Link href={`/courses/${course.slug}`}>
               <Image

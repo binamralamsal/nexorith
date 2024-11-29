@@ -44,11 +44,11 @@ export function SkilLevelSelectionCard() {
       }
     }
 
-    router.push(`?${params.toString()}`);
+    router.push(`?${params.toString()}`, { scroll: false });
   }
 
   return (
-    <Card>
+    <Card className="shadow-sm">
       <CardHeader>
         <CardTitle className="text-xl lg:text-2xl">Skill level</CardTitle>
       </CardHeader>
