@@ -32,7 +32,7 @@ export function SiteHeader() {
       className={cn(
         "px-4 py-8",
         scrolled &&
-          "sticky top-0 z-50 animate-headerSticky p-4 shadow-[0_8px_30px_rgb(0,0,0,0.05)] backdrop-blur supports-[backdrop-filter]:bg-background/85",
+          "sticky top-0 z-50 animate-headerSticky p-4 shadow-[0_8px_30px_rgb(0,0,0,0.05)] backdrop-blur supports-[backdrop-filter]:bg-background/90",
       )}
     >
       <div className="container flex items-center justify-between">
